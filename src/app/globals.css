@@ -1,0 +1,224 @@
+
+@import "tailwindcss";
+
+/* =========================
+   DESIGN TOKENS
+========================= */
+
+:root {
+  --background: #020007;
+  --foreground: #ffffff;
+
+  --brand-dark: #ce00a5;
+  --brand-primary: #fa32be;
+  --brand-purple: #ce00a5;
+
+  --brand-gradient: linear-gradient(90deg, #f730bf 0%, #bd03ce 100%);
+  --body-gradient: linear-gradient(90deg, #bb01cd 0%, #fa32be 100%);
+
+  --contact-glow: radial-gradient(
+    circle at 75% 65%,
+    rgba(255, 255, 255, 0.55) 0%,
+    rgba(155, 1, 139, 0) 55%
+  );
+}
+
+/* =========================
+   TAILWIND THEME
+========================= */
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-brand-primary: var(--brand-primary);
+  --color-brand-purple: var(--brand-purple);
+
+  --font-sans: var(--font-poppins);
+  --font-display: var(--font-sansation);
+}
+
+/* =========================
+   BASE STYLES
+========================= */
+
+body {
+  color: var(--foreground);
+  font-family: var(--font-sansation), sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-poppins), sans-serif;
+}
+
+/* =========================
+   BACKGROUNDS & GRADIENTS
+========================= */
+
+.bg-brand-gradient {
+  background-image: var(--brand-gradient);
+}
+
+.home-background {
+  background-color: var(--background);
+  background-image: url("/images/home-bg.png");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: 100% 100%;
+  
+}
+
+@utility bg-contact-glow {
+  background-image: var(--contact-glow);
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-[#F730BF] to-[#BD03CE] bg-clip-text text-transparent;
+  }
+}
+
+/* =========================
+   BORDERS
+========================= */
+
+@utility border-brand-gradient {
+  border-style: solid;
+  border-color: transparent;
+
+  background:
+    linear-gradient(var(--background), var(--background)) padding-box,
+    var(--brand-gradient) border-box;
+}
+
+@utility accordion-gradient-border {
+  border-image: var(--brand-gradient) 1;
+}
+
+/* =========================
+   GLASS EFFECT
+========================= */
+
+@utility glass-effect {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.18) 0%,
+    rgba(255, 255, 255, 0.10) 45%,
+    rgba(255, 255, 255, 0.06) 100%
+  );
+
+  border: 1px solid rgba(255, 255, 255, 0.22);
+
+  backdrop-filter: blur(2px) saturate(140%);
+  -webkit-backdrop-filter: blur(2px) saturate(140%);
+
+  box-shadow:
+    inset 1px 1px 2px rgba(255, 255, 255, 0.35),
+    inset -1px -1px 2px rgba(255, 255, 255, 0.08),
+    0 8px 32px rgba(0, 0, 0, 0.12);
+}
+
+/* =========================
+   SCROLLBAR
+========================= */
+
+@utility no-scrollbar {
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* =========================
+   SERVICE SLIDER
+========================= */
+
+@keyframes service-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(calc(-50% - 6px));
+  }
+}
+
+.service-slider {
+  animation: service-scroll 18s linear infinite;
+}
+
+
+
+/* =========================
+   CLIENT MARQUEE
+========================= */
+
+@keyframes client-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes client-scroll-reverse {
+  from {
+    transform: translateX(-50%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+.client-marquee {
+  animation: client-scroll 25s linear infinite;
+}
+
+.client-marquee-reverse {
+  animation-name: client-scroll-reverse;
+}
+
+
+
+
+@keyframes studio-banner-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.studio-banner-scroll {
+  animation: studio-banner-scroll 25s linear infinite;
+}
+
+
+
+@media (prefers-reduced-motion: reduce) {
+  .studio-banner-scroll {
+    animation: none;
+  }
+}
+
+
+/* =========================
+   ACCESSIBILITY
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .service-slider,
+  .client-marquee {
+    animation: none;
+  }
+}
