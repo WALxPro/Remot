@@ -3,8 +3,8 @@
 
 import Image from "next/image";
 import { FaqItem } from "@/components/ui/FaqItem";
-import { FAQ, IMAGES } from "@/config/home/home";
 import { useAccordion } from "@/hooks/useAccordion";
+import { FAQ, SHARED_IMAGES } from "@/config/shared/shared";
 
 const formatNumber = (index) =>
   String(index + 1).padStart(2, "0");
@@ -17,7 +17,7 @@ export function FaqSection() {
     <section className="bg-transparent px-4 py-12 lg:px-8 lg:py-16">
       <div className="relative isolate mx-auto max-w-7xl overflow-hidden rounded-3xl px-6 py-14 lg:px-14 lg:py-20">
         <Image
-          src={IMAGES.faq.background}
+          src={SHARED_IMAGES.faq.background}
           alt=""
           fill
           sizes="(min-width: 1280px) 1280px, 100vw"

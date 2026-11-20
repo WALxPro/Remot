@@ -1,6 +1,4 @@
 export const IMAGES = {
-  hero: "/images/hero.webp",
-
   services: {
     animation: "/images/animation.webp",
     videoEditing: "/images/video-editing.webp",
@@ -25,7 +23,7 @@ export const IMAGES = {
     seoDigitalMarketing: "/images/seo-digital-marketing-service.webp",
   },
   portfolio: {
-    background: "/images/portfolio-bg.webp",
+    background: "/images/hero.webp",
     mood: "/images/mood.webp",
     zine: "/images/zine.webp",
     branding: "/images/brand.webp",
@@ -33,32 +31,24 @@ export const IMAGES = {
     notToday: "/images/not-today.webp",
   },
 
-clients: {
-  isuzu: "/images/client-1.webp",
-  fujifilm: "/images/client-2.webp",
-  dubaiLimited: "/images/client-3.webp",
-  latdour: "/images/client-4.webp",
-  emiratesSteel: "/images/client-5.webp",
-},
-creative: {
-  creative1: "/images/creative-1.webp",
-  creative2: "/images/creative-2.webp",
-  creative3: "/images/creative-3.webp",
-  creative4: "/images/creative-4.webp",
-},
-pricing: {
-  glow: "/images/pricing-glow.webp",
-  leftDecoration: "/images/pricng-left.webp",
-  rightDecoration: "/images/pricng-right.webp",
-  premiumBackground: "/images/portfolio-bg.webp",
-},
-
-  // IMAGES object ke andar add karein
-  faq: {
-    background: "/images/faq-bg.webp",
+  clients: {
+    isuzu: "/images/client-1.webp",
+    fujifilm: "/images/client-2.webp",
+    dubaiLimited: "/images/client-3.webp",
+    latdour: "/images/client-4.webp",
+    emiratesSteel: "/images/client-5.webp",
   },
-  contact: {
-    image: "/images/contact.webp",
+  creative: {
+    creative1: "/images/creative-1.webp",
+    creative2: "/images/creative-2.webp",
+    creative3: "/images/creative-3.webp",
+    creative4: "/images/creative-4.webp",
+  },
+  pricing: {
+    glow: "/images/pricing-glow.webp",
+    leftDecoration: "/images/pricng-left.webp",
+    rightDecoration: "/images/pricng-right.webp",
+    premiumBackground: "/images/portfolio-bg.webp",
   },
 };
 
@@ -120,7 +110,6 @@ export const ABOUT = {
   ],
 };
 
-
 export const WHY_US = {
   title: "WHY WORK WITH US?",
   items: [
@@ -159,35 +148,34 @@ export const WHY_US = {
   },
 };
 
-
 export const SERVICE_SHOWCASE = {
   eyebrow: "Our Services",
   title: ["This is", "our thing!"],
   description:
     "Whether you need one specialist or a combination of services, we can shape our team around your project.",
   cta: { label: "Explore Our Services", href: "/services" },
-cards: [
-  {
-    id: "illustrations",
-    label: "Illustrations",
-    image: IMAGES.serviceShowcase.illustrations,
-  },
-  {
-    id: "book-cover",
-    label: "Book Cover",
-    image: IMAGES.serviceShowcase.bookCover,
-  },
-  {
-    id: "social-media",
-    label: "Social Media",
-    image: IMAGES.serviceShowcase.socialMedia,
-  },
-  {
-    id: "branding",
-    label: "Branding",
-    image: IMAGES.portfolio.branding,
-  },
-],
+  cards: [
+    {
+      id: "illustrations",
+      label: "Illustrations",
+      image: IMAGES.serviceShowcase.illustrations,
+    },
+    {
+      id: "book-cover",
+      label: "Book Cover",
+      image: IMAGES.serviceShowcase.bookCover,
+    },
+    {
+      id: "social-media",
+      label: "Social Media",
+      image: IMAGES.serviceShowcase.socialMedia,
+    },
+    {
+      id: "branding",
+      label: "Branding",
+      image: IMAGES.portfolio.branding,
+    },
+  ],
 };
 
 export const PORTFOLIO = {
@@ -210,71 +198,6 @@ export const PORTFOLIO = {
   ],
 };
 
-export const FAQ = {
-  title: { light: "Most asked", bold: "Questions!" },
-  defaultOpenId: "services",
-  items: [
-    {
-      id: "services",
-      question: "What digital services do you offer?",
-      answer:
-        "We offer a range of creative and digital services, including branding, graphic design, website development, mobile app development, digital marketing, animation, and social media design.",
-    },
-    {
-      id: "process",
-      question: "How does your creative process work?",
-      answer:
-        "We start with a short discovery call, then move through concept, design, and revisions. You stay in the loop at every stage, and we only finalize once you are happy.",
-    },
-    {
-      id: "brand-identity",
-      question: "Can you create a brand identity from scratch?",
-      answer:
-        "Yes. From logo and color palette to typography and brand guidelines, we build a complete identity that fits your audience and goals.",
-    },
-    {
-      id: "timeline",
-      question: "How long does a typical project take?",
-      answer:
-        "It depends on the scope. A single design can take a few days, while a full brand launch usually takes a few weeks. We share a clear timeline before we start.",
-    },
-  ],
-};
-
-export const CONTACT = {
-  title: "Have an idea\nin mind?",
-  description:
-    "Tell us what you need, and we'll help you figure out the next step.",
-  image: { src: IMAGES.contact.image, alt: "Abstract pink 3D ribbon" },
-  submitLabel: "Send",
-  successMessage: "Thank you! We will get back to you soon.",
-  fields: [
-    {
-      name: "firstName",
-      label: "First Name",
-      type: "text",
-      autoComplete: "given-name",
-    },
-    { name: "email", label: "Email", type: "email", autoComplete: "email" },
-    { name: "phone", label: "Phone Number", type: "tel", autoComplete: "tel" },
-    {
-      name: "service",
-      label: "Service",
-      type: "select",
-      options: [
-        "Animation",
-        "Video Editing",
-        "Branding",
-        "Ebook Design",
-        "Illustration",
-        "Social Media",
-      ],
-    },
-    { name: "message", label: "Message", type: "textarea", fullWidth: true },
-  ],
-};
-
-
 export const CLIENTS = {
   title: "OUR CLIENTS",
   logos: [
@@ -293,7 +216,6 @@ export const CLIENTS = {
     },
   ],
 };
-
 
 export const PRICING = {
   title: "PRICING",

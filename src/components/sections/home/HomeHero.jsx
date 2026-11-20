@@ -1,9 +1,10 @@
 import { Hero as SharedHero } from "@/components/shared/Hero";
-import { HERO, IMAGES } from "@/config/home/home";
+import { HERO } from "@/config/home/home";
+import { SHARED_IMAGES } from "@/config/shared/shared";
 
 export function HomeHero() {
   return (
-    <SharedHero background={IMAGES.hero} className="relative sm:h-[1000px]">
+    <SharedHero background={SHARED_IMAGES.hero} className="relative sm:h-[1000px]">
       <SharedHero.Title lines={HERO.titleLines} />
 
       <SharedHero.Description>{HERO.description}</SharedHero.Description>

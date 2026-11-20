@@ -2,7 +2,8 @@
 import Image from "next/image";
 import { ContactForm } from "@/components/ui/ContactForm";
 import { Paragraph } from "@/components/ui/Paragraph";
-import { CONTACT } from "@/config/home/home";
+import { CONTACT } from "@/config/shared/shared";
+
 
 export function ContactSection() {
   const {

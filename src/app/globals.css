@@ -1,4 +1,3 @@
-
 @import "tailwindcss";
 
 /* =========================
@@ -12,6 +11,7 @@
   --brand-dark: #ce00a5;
   --brand-primary: #fa32be;
   --brand-purple: #ce00a5;
+  --brand-news: #FF03CF;
 
   --brand-gradient: linear-gradient(90deg, #f730bf 0%, #bd03ce 100%);
   --body-gradient: linear-gradient(90deg, #bb01cd 0%, #fa32be 100%);
@@ -69,9 +69,44 @@ h6 {
   background-repeat: no-repeat;
   background-position: center top;
   background-size: 100% 100%;
-  
 }
 
+.contact-background {
+  background-color: var(--background);
+  background-image: url("/images/contact-bg.webp");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: 100% 100%;
+}
+
+.pricing-background {
+  background-color: var(--background);
+  background-image: url("/images/pricing-bg.webp");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: 100% 100%;
+}
+.portfolio-background {
+  background-color: var(--background);
+  background-image: url("/images/portfolio-bg.webp");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: 100% 100%;
+}
+.about-background {
+  background-color: var(--background);
+  background-image: url("/images/about-bg.webp");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: 100% 100%;
+}
+.bg-footer-image {
+  background-color: var(--background);
+  background-image: url("/images/footer-bg.webp");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
 @utility bg-contact-glow {
   background-image: var(--contact-glow);
 }
@@ -107,7 +142,7 @@ h6 {
   background: linear-gradient(
     135deg,
     rgba(255, 255, 255, 0.18) 0%,
-    rgba(255, 255, 255, 0.10) 45%,
+    rgba(255, 255, 255, 0.1) 45%,
     rgba(255, 255, 255, 0.06) 100%
   );
 
@@ -152,8 +187,6 @@ h6 {
   animation: service-scroll 18s linear infinite;
 }
 
-
-
 /* =========================
    CLIENT MARQUEE
 ========================= */
@@ -186,9 +219,6 @@ h6 {
   animation-name: client-scroll-reverse;
 }
 
-
-
-
 @keyframes studio-banner-scroll {
   from {
     transform: translateX(0);
@@ -203,14 +233,11 @@ h6 {
   animation: studio-banner-scroll 25s linear infinite;
 }
 
-
-
 @media (prefers-reduced-motion: reduce) {
   .studio-banner-scroll {
     animation: none;
   }
 }
-
 
 /* =========================
    ACCESSIBILITY
@@ -220,5 +247,25 @@ h6 {
   .service-slider,
   .client-marquee {
     animation: none;
+  }
+}
+
+
+/* =========================
+   STUDIO BANNER
+========================= */
+
+.studio-banner img {
+  vertical-align: middle;
+}
+
+.studio-banner {
+  text-wrap: pretty;
+}
+
+@media (max-width: 640px) {
+  .studio-banner {
+    line-height: 1.65;
+    letter-spacing: -0.025em;
   }
 }

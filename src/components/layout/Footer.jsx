@@ -8,8 +8,7 @@ export function Footer() {
   const { brand, columns, contact, social, watermark, copyright } = FOOTER;
 
   return (
-    <footer className="relative overflow-hidden bg-brand-gradient pt-24 lg:pt-36">
-      <div className="mx-auto grid max-w-7xl gap-12 px-6 lg:grid-cols-[1fr_auto_auto_auto] lg:gap-16 lg:px-0">
+<footer className="relative overflow-hidden bg-footer-image pt-24 lg:pt-36">      <div className="mx-auto grid max-w-7xl gap-12 px-6 lg:grid-cols-[1fr_auto_auto_auto] lg:gap-16 lg:px-0">
         <div>
           <Image
             src="/images/logo-remot.png"
