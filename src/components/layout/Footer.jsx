@@ -41,7 +41,7 @@ export function Footer() {
       >
         <span
           className="pointer-events-none block select-none whitespace-nowrap text-center
-               text-[11vw] font-semibold uppercase leading-none text-white/10
+               text-[11vw] font-semibold uppercase leading-none text-foreground/10
                [filter:url(#glass-text-xl)]"
         >
           {watermark}

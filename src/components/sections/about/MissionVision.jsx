@@ -40,11 +40,11 @@ function ContentBlock({ number, title, description }) {
         {number}
       </span>
 
-      <h3 className="mt-5 font-display text-[25px] font-normal leading-[1.15] text-white md:text-[29px] lg:text-[34px]">
+      <h3 className="mt-5 font-display text-[25px] font-normal leading-[1.15] text-foreground md:text-[29px] lg:text-[34px]">
         {title}
       </h3>
 
-      <p className="mt-5 max-w-[340px] font-sans text-[14px] leading-[1.4] text-white/90 md:text-[15px] lg:text-[16px]">
+      <p className="mt-5 max-w-[340px] font-sans text-[14px] leading-[1.4] text-foreground/90 md:text-[15px] lg:text-[16px]">
         {description}
       </p>
     </div>

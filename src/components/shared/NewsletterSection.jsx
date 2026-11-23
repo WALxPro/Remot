@@ -16,7 +16,7 @@ export function NewsletterSection() {
 
         {/* Content */}
         <div className="flex w-full flex-col items-center px-5 py-[60px] text-center sm:px-10 sm:py-[80px] lg:py-[100px]">
-          <h2 className="font-sans text-[28px] font-medium uppercase leading-[1.1] text-white sm:text-[42px] lg:text-[60px]">
+          <h2 className="font-sans text-[28px] font-medium uppercase leading-[1.1] text-foreground sm:text-[42px] lg:text-[60px]">
             JOIN OUR NEWSLETTER TO
             <span className="block">STAY UP TO DATE!</span>
           </h2>
@@ -32,7 +32,7 @@ export function NewsletterSection() {
 
             <button
               type="button"
-              className="flex min-h-[48px] min-w-[115px] shrink-0 cursor-pointer items-center justify-center rounded-full bg-[#FF03CF] px-4 text-sm font-medium text-white sm:min-h-[70px] sm:min-w-[260px] sm:text-lg"
+              className="flex min-h-[48px] min-w-[115px] shrink-0 cursor-pointer items-center justify-center rounded-full bg-[#FF03CF] px-4 text-sm font-medium text-foreground sm:min-h-[70px] sm:min-w-[260px] sm:text-lg"
             >
               Subscribe
             </button>

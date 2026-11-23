@@ -37,7 +37,7 @@ export function FeaturedWork() {
 
         {/* Heading */}
         <div className="relative z-40 mx-auto max-w-4xl">
-          <h2 className="font-sans text-[36px] font-normal uppercase leading-[1.1] text-white sm:text-[55px] lg:text-[70px]">
+          <h2 className="font-sans text-[36px] font-normal uppercase leading-[1.1] text-foreground sm:text-[55px] lg:text-[70px]">
             {title}
           </h2>
 

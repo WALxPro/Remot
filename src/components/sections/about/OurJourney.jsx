@@ -47,11 +47,11 @@ export default function OurJourney() {
                 <div
                   className="glass-text inline-block font-sans font-medium
                       text-[clamp(44px,7vw,150px)] leading-[1.05] tracking-normal
-                      text-white/10"
+                      text-foreground/10"
                 >
                   {stat.value}
                 </div>
-                <p className="mt-2 font-sans text-[13px] text-white md:text-[16px]">
+                <p className="mt-2 font-sans text-[13px] text-foreground md:text-[16px]">
                   {stat.label}
                 </p>
               </div>

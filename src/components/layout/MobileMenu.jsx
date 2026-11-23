@@ -53,7 +53,7 @@ export function MobileMenu({ isOpen, onClose }) {
                   className="
                     flex w-full cursor-pointer
                     items-center justify-between
-                    py-3 text-left text-base text-white
+                    py-3 text-left text-base text-foreground
                   "
                 >
                   {item.label}
@@ -105,7 +105,7 @@ export function MobileMenu({ isOpen, onClose }) {
                               ${
                                 isActive
                                   ? "text-brand-primary"
-                                  : "text-white"
+                                  : "text-foreground"
                               }
                             `}
                           >
@@ -142,7 +142,7 @@ export function MobileMenu({ isOpen, onClose }) {
                                       className="
                                         block text-[13px]
                                         leading-relaxed
-                                        text-white/65
+                                        text-foreground/65
                                         transition-colors
                                         hover:text-brand-primary
                                       "
@@ -165,7 +165,7 @@ export function MobileMenu({ isOpen, onClose }) {
                 href={item.href}
                 onClick={handleClose}
                 className="
-                  block py-3 text-base text-white
+                  block py-3 text-base text-foreground
                   transition hover:text-brand-primary
                 "
               >
@@ -184,7 +184,7 @@ export function MobileMenu({ isOpen, onClose }) {
           bg-brand-gradient mt-6
           flex min-h-12 items-center
           justify-center rounded-lg
-          px-5 text-white
+          px-5 text-foreground
         "
       >
         Contact us

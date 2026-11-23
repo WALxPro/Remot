@@ -70,7 +70,7 @@ export function ServicesMegaMenu({ onClose }) {
               Studio Remot
             </span>
 
-            <h2 className="mt-2 font-display text-[28px] font-semibold text-white">
+            <h2 className="mt-2 font-display text-[28px] font-semibold text-foreground">
               Explore what we do.
             </h2>
           </div>
@@ -79,7 +79,7 @@ export function ServicesMegaMenu({ onClose }) {
             <Link
               href="/services"
               onClick={onClose}
-              className="flex items-center gap-2 text-sm font-medium text-brand-primary hover:text-white"
+              className="flex items-center gap-2 text-sm font-medium text-brand-primary hover:text-foreground"
             >
               All Services
               <HiArrowUpRight className="text-lg" />
@@ -89,7 +89,7 @@ export function ServicesMegaMenu({ onClose }) {
               type="button"
               onClick={onClose}
               aria-label="Close mega menu"
-              className="text-xl text-white/50 transition hover:text-white"
+              className="text-xl text-foreground/50 transition hover:text-foreground"
             >
               <HiX />
             </button>
@@ -98,7 +98,7 @@ export function ServicesMegaMenu({ onClose }) {
 
         {/* SEARCH */}
         <div className="mb-7 flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 px-4 py-3">
-          <HiOutlineSearch className="text-xl text-white/50" />
+          <HiOutlineSearch className="text-xl text-foreground/50" />
 
           <input
             type="search"
@@ -108,7 +108,7 @@ export function ServicesMegaMenu({ onClose }) {
             }
             placeholder="What service are you looking for?"
             aria-label="Search services"
-            className="w-full bg-transparent text-sm text-white outline-none placeholder:text-white/40"
+            className="w-full bg-transparent text-sm text-foreground outline-none placeholder:text-foreground/40"
           />
 
           {search && (
@@ -116,7 +116,7 @@ export function ServicesMegaMenu({ onClose }) {
               type="button"
               onClick={() => setSearch("")}
               aria-label="Clear search"
-              className="text-white/50 hover:text-white"
+              className="text-foreground/50 hover:text-foreground"
             >
               <HiX />
             </button>
@@ -128,7 +128,7 @@ export function ServicesMegaMenu({ onClose }) {
 
           {/* LEFT CATEGORIES */}
           <div className="no-scrollbar overflow-y-auto border-r border-white/10 py-4">
-            <p className="mb-3 px-5 text-[11px] font-semibold uppercase tracking-[0.15em] text-white/40">
+            <p className="mb-3 px-5 text-[11px] font-semibold uppercase tracking-[0.15em] text-foreground/40">
               Service Categories
             </p>
 
@@ -157,12 +157,12 @@ export function ServicesMegaMenu({ onClose }) {
                     ${
                       isActive
                         ? "bg-brand-primary/10 text-brand-primary"
-                        : "text-white/70 hover:bg-white/5 hover:text-white"
+                        : "text-foreground/70 hover:bg-white/5 hover:text-foreground"
                     }
                   `}
                 >
                   <span className="flex items-center gap-3">
-                    <span className="text-[10px] text-white/30">
+                    <span className="text-[10px] text-foreground/30">
                       {String(
                         SERVICE_MEGA_MENU.findIndex(
                           (item) => item.id === category.id
@@ -181,7 +181,7 @@ export function ServicesMegaMenu({ onClose }) {
             })}
 
             {filteredCategories.length === 0 && (
-              <p className="px-5 py-5 text-sm text-white/50">
+              <p className="px-5 py-5 text-sm text-foreground/50">
                 No matching categories.
               </p>
             )}
@@ -196,11 +196,11 @@ export function ServicesMegaMenu({ onClose }) {
                     Creative Services
                   </span>
 
-                  <h3 className="mt-3 font-display text-[26px] font-semibold leading-tight text-white">
+                  <h3 className="mt-3 font-display text-[26px] font-semibold leading-tight text-foreground">
                     {activeCategory.title}
                   </h3>
 
-                  <p className="mt-2 text-sm text-white/50">
+                  <p className="mt-2 text-sm text-foreground/50">
                     Explore creative solutions tailored to your project.
                   </p>
                 </div>
@@ -223,7 +223,7 @@ export function ServicesMegaMenu({ onClose }) {
                         hover:bg-brand-primary/10
                       "
                     >
-                      <span className="text-[13px] leading-snug text-white/80 transition group-hover:text-white">
+                      <span className="text-[13px] leading-snug text-foreground/80 transition group-hover:text-foreground">
                         {service.label}
                       </span>
 
@@ -235,14 +235,14 @@ export function ServicesMegaMenu({ onClose }) {
                 <Link
                   href={activeCategory.href}
                   onClick={onClose}
-                  className="mt-7 inline-flex items-center gap-2 text-sm font-medium text-brand-primary hover:text-white"
+                  className="mt-7 inline-flex items-center gap-2 text-sm font-medium text-brand-primary hover:text-foreground"
                 >
                   Explore {activeCategory.title}
                   <HiArrowRight />
                 </Link>
               </>
             ) : (
-              <div className="flex h-full items-center justify-center text-sm text-white/50">
+              <div className="flex h-full items-center justify-center text-sm text-foreground/50">
                 No services found.
               </div>
             )}
@@ -251,14 +251,14 @@ export function ServicesMegaMenu({ onClose }) {
 
         {/* BOTTOM BAR */}
         <div className="mt-6 flex items-center justify-between">
-          <p className="text-xs text-white/40">
+          <p className="text-xs text-foreground/40">
             One creative team. Endless possibilities.
           </p>
 
           <Link
             href="/contact"
             onClick={onClose}
-            className="flex items-center gap-2 text-sm font-medium text-brand-primary hover:text-white"
+            className="flex items-center gap-2 text-sm font-medium text-brand-primary hover:text-foreground"
           >
             Have a project in mind?
             <HiArrowUpRight />

@@ -24,7 +24,7 @@ export function FaqSection() {
           className="-z-10 object-cover"
         />
 
-        <h2 className="text-center text-4xl uppercase leading-[1.1] text-white lg:text-[80px]">
+        <h2 className="text-center text-4xl uppercase leading-[1.1] text-foreground lg:text-[80px]">
           <span className="block font-light">
             {title.light}
           </span>

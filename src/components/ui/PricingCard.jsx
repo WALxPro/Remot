@@ -7,10 +7,10 @@ import { IMAGES } from "@/config/home/home";
 const VARIANTS = {
   basic: {
     card: "bg-white text-background",
-    button: "bg-background text-white hover:bg-brand-purple",
+    button: "bg-background text-foreground hover:bg-brand-purple",
   },
   premium: {
-    card: "bg-brand-purple text-white",
+    card: "bg-brand-purple text-foreground",
     button: "bg-white text-background hover:bg-gray-100",
   },
 };

@@ -61,14 +61,14 @@ export function PricingPackageForm() {
       <div className="mt-8 flex flex-col gap-4">
         <button
           type="button"
-          className="flex min-h-[50px] w-full items-center justify-center rounded-[5px] bg-black px-4 text-sm font-medium text-white"
+          className="flex min-h-[50px] w-full items-center justify-center rounded-[5px] bg-black px-4 text-sm font-medium text-foreground"
         >
           Total Amount
         </button>
 
         <button
           type="button"
-          className="flex min-h-[50px] w-full items-center justify-center rounded-[5px] bg-black px-4 text-sm font-medium text-white"
+          className="flex min-h-[50px] w-full items-center justify-center rounded-[5px] bg-black px-4 text-sm font-medium text-foreground"
         >
           Payment Method
         </button>

@@ -32,7 +32,7 @@ export function SocialLinks({ title, links }) {
                 rel="noopener noreferrer"
                 aria-label={label}
                 title={label}
-                className="flex h-[49px] w-[49px] items-center justify-center rounded-full bg-brand-primary text-white transition-all duration-300 hover:scale-110 hover:bg-brand-purple focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-primary"
+                className="flex h-[49px] w-[49px] items-center justify-center rounded-full bg-brand-primary text-foreground transition-all duration-300 hover:scale-110 hover:bg-brand-purple focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-primary"
               >
                 <Icon size={24} aria-hidden="true" />
               </a>

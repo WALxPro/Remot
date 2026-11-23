@@ -6,7 +6,7 @@ export function GradientOutlineText({
 }) {
   return (
     <span
-      className={`text-white ${className}`}
+      className={`text-foreground ${className}`}
       style={{
         WebkitTextStroke: `1px ${strokeColor}`,
         paintOrder: "stroke fill",

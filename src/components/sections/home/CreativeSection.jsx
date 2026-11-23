@@ -45,7 +45,7 @@ export function CreativeSection() {
 
           {/* Left Text */}
           <div className="relative z-10 text-center lg:-translate-y-[30vh] lg:text-left">
-            <h2 className="font-sans text-[36px] font-light uppercase leading-[0.95] tracking-tight text-white sm:text-[46px] lg:text-[8vw]">
+            <h2 className="font-sans text-[36px] font-light uppercase leading-[0.95] tracking-tight text-foreground sm:text-[46px] lg:text-[8vw]">
               <span className="block whitespace-nowrap lg:text-[6.5vw]">
                 NOT JUST
               </span>
@@ -83,7 +83,7 @@ export function CreativeSection() {
 
           {/* Right Text */}
           <div className="relative z-10 text-center lg:-ml-[2vw] lg:translate-y-0 lg:text-right">
-            <h2 className="font-sans text-[36px] font-light uppercase leading-[0.95] tracking-tight text-white sm:text-[46px] lg:text-[6.5vw]">
+            <h2 className="font-sans text-[36px] font-light uppercase leading-[0.95] tracking-tight text-foreground sm:text-[46px] lg:text-[6.5vw]">
               <span className="block whitespace-nowrap lg:text-[6vw]">
                 CREATIVELY
               </span>

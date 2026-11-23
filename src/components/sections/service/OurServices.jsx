@@ -37,7 +37,7 @@ const ServiceCard = ({ service }) => {
             text-[clamp(48px,5vw,64px)]
             font-medium
             leading-none
-            text-white/10
+            text-foreground/10
             [filter:url(#glass-text-sm)]
           "
         >
@@ -85,7 +85,7 @@ const ServiceCard = ({ service }) => {
             <span aria-hidden="true">↗</span>
           </Link>
         ) : (
-          <span className="inline-flex items-center gap-2 text-[16px] text-white/80 sm:text-[18px] xl:text-[20px]">
+          <span className="inline-flex items-center gap-2 text-[16px] text-foreground/80 sm:text-[18px] xl:text-[20px]">
             {linkText}
             <span aria-hidden="true">↗</span>
           </span>
