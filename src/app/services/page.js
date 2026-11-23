@@ -1,5 +1,25 @@
-import { RoutePlaceholder } from "@/components/layout/RoutePlaceholder";
+import { HowWeWork } from "@/components/sections/service/HowWeWork";
+import { OurServices } from "@/components/sections/service/OurServices";
+import { ServiceHero } from "@/components/sections/service/ServiceHero";
+import { ServicesShowcase } from "@/components/sections/service/ServicesShowcase";
+import { ContactSection } from "@/components/shared/ContactSection";
+import { FaqSection } from "@/components/shared/FaqSection";
+import { NewsletterSection } from "@/components/shared/NewsletterSection";
+import { StudioBanner } from "@/components/shared/StudioBanner";
 
 export default function ServicesPage() {
-  return <RoutePlaceholder title="Services" />;
+  return (
+    <div className="service-background">
+      <ServiceHero/>
+      <ServicesShowcase/>
+      <OurServices/>
+      <HowWeWork/>
+      <StudioBanner />
+      <FaqSection />
+      <ContactSection />
+      <NewsletterSection />
+    </div>
+  );
 }
+
+

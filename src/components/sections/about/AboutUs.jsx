@@ -5,7 +5,7 @@ export default function AboutUs() {
   return (
     <section
       aria-label="About Studio Remot"
-      className="w-full  px-4 py-16 text-white md:px-8 lg:py-24"
+      className="w-full  px-4 py-16 text-foreground md:px-8 lg:py-24"
     >
       <div className="mx-auto max-w-7xl">
         <p

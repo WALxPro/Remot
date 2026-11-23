@@ -1,14 +1,16 @@
-
 import Image from "next/image";
 import { FooterColumn } from "@/components/ui/FooterColumn";
 import { SocialLinks } from "@/components/ui/SocialLinks";
 import { FOOTER } from "@/config/navigation";
+import { GlassTextFilter } from "../ui/GlassTextFilter";
 
 export function Footer() {
   const { brand, columns, contact, social, watermark, copyright } = FOOTER;
 
   return (
-<footer className="relative overflow-hidden bg-footer-image pt-24 lg:pt-36">      <div className="mx-auto grid max-w-7xl gap-12 px-6 lg:grid-cols-[1fr_auto_auto_auto] lg:gap-16 lg:px-0">
+    <footer className="relative overflow-hidden bg-footer-image pt-24 lg:pt-36">
+      {" "}
+      <div className="mx-auto grid max-w-7xl gap-12 px-6 lg:grid-cols-[1fr_auto_auto_auto] lg:gap-16 lg:px-0">
         <div>
           <Image
             src="/images/logo-remot.png"
@@ -24,11 +26,7 @@ export function Footer() {
         </div>
 
         {columns.map(({ title, links }) => (
-          <FooterColumn
-            key={title}
-            title={title}
-            items={links}
-          />
+          <FooterColumn key={title} title={title} items={links} />
         ))}
 
         <div className="flex flex-col gap-8">
@@ -36,23 +34,19 @@ export function Footer() {
           <SocialLinks title={social.title} links={social.links} />
         </div>
       </div>
-
+      <GlassTextFilter id="glass-text-xl" blur={5} depth={10} shadow={8} />
       <div
         className="relative mx-auto mt-16 h-[6vw] max-w-7xl overflow-hidden"
         aria-hidden="true"
       >
         <span
-          className="pointer-events-none block select-none whitespace-nowrap text-center text-[11vw] font-semibold uppercase leading-none text-foreground/10"
-          style={{
-            WebkitTextStroke: "1px rgba(255, 255, 255, 0.35)",
-            textShadow:
-              "1px 1px 2px rgba(255,255,255,0.2), 0 5px 20px rgba(255,255,255,0.08)",
-          }}
+          className="pointer-events-none block select-none whitespace-nowrap text-center
+               text-[11vw] font-semibold uppercase leading-none text-white/10
+               [filter:url(#glass-text-xl)]"
         >
           {watermark}
         </span>
       </div>
-
       <p className="absolute bottom-3 right-6 text-base text-foreground/80 lg:right-16">
         &copy; {new Date().getFullYear()} {copyright}
       </p>

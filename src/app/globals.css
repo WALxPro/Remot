@@ -71,6 +71,15 @@ h6 {
   background-size: 100% 100%;
 }
 
+.service-background {
+  background-color: var(--background);
+  background-image: url("/images/service-bg.webp");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: 100% 100%;
+}
+
+
 .contact-background {
   background-color: var(--background);
   background-image: url("/images/contact-bg.webp");
@@ -138,24 +147,32 @@ h6 {
    GLASS EFFECT
 ========================= */
 
-@utility glass-effect {
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.18) 0%,
-    rgba(255, 255, 255, 0.1) 45%,
-    rgba(255, 255, 255, 0.06) 100%
-  );
 
-  border: 1px solid rgba(255, 255, 255, 0.22);
+@utility glass-text {
+  filter: url(#glass-text);
+  /* optional hairline edge like Figma's refraction edge */
+  -webkit-text-stroke: 0.5px rgba(255, 255, 255, 0.18);
+}
 
-  backdrop-filter: blur(2px) saturate(140%);
-  -webkit-backdrop-filter: blur(2px) saturate(140%);
+
+/* =========================
+   HOW WE WORK - GLASS
+========================= */
+
+@utility service-glass {
+  background: rgba(255, 255, 255, 0.1);
+
+  backdrop-filter: blur(18px) saturate(160%);
+  -webkit-backdrop-filter: blur(18px) saturate(160%);
+
+  border: 1px solid rgba(255, 255, 255, 0.25);
 
   box-shadow:
-    inset 1px 1px 2px rgba(255, 255, 255, 0.35),
-    inset -1px -1px 2px rgba(255, 255, 255, 0.08),
-    0 8px 32px rgba(0, 0, 0, 0.12);
+    inset 2px 2px 3px rgba(255, 255, 255, 0.65),
+    inset -2px -2px 4px rgba(255, 255, 255, 0.12),
+    0 8px 28px rgba(0, 0, 0, 0.12);
 }
+
 
 /* =========================
    SCROLLBAR

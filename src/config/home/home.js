@@ -45,10 +45,7 @@ export const IMAGES = {
     creative4: "/images/creative-4.webp",
   },
   pricing: {
-    glow: "/images/pricing-glow.webp",
-    leftDecoration: "/images/pricng-left.webp",
-    rightDecoration: "/images/pricng-right.webp",
-    premiumBackground: "/images/portfolio-bg.webp",
+    premiumBackground: "/images/pricing-card.webp",
   },
 };
 
