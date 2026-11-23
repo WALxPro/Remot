@@ -1,5 +1,6 @@
 export const SHARED_IMAGES = {
   hero: "/images/hero.webp",
+  newsletter: "/images/newsletter.webp",
 
   faq: {
     background: "/images/faq-bg.webp",
@@ -71,4 +72,13 @@ export const CONTACT = {
     },
     { name: "message", label: "Message", type: "textarea", fullWidth: true },
   ],
+};
+
+export const NEWSLETTER = {
+  title: ["JOIN OUR NEWSLETTER TO", "STAY UP TO DATE!"],
+
+  form: {
+    placeholder: "Enter Your Email",
+    buttonText: "Subscribe",
+  },
 };

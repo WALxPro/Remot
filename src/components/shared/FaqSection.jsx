@@ -2,6 +2,7 @@
 "use client";
 
 import Image from "next/image";
+
 import { FaqItem } from "@/components/ui/FaqItem";
 import { useAccordion } from "@/hooks/useAccordion";
 import { FAQ, SHARED_IMAGES } from "@/config/shared/shared";
@@ -14,26 +15,62 @@ export function FaqSection() {
   const { isOpen, toggle } = useAccordion(defaultOpenId);
 
   return (
-    <section className="bg-transparent px-4 py-12 lg:px-8 lg:py-16">
-      <div className="relative isolate mx-auto max-w-7xl overflow-hidden rounded-3xl px-6 py-14 lg:px-14 lg:py-20">
+    <section
+      aria-labelledby="faq-heading"
+      className="bg-transparent px-4 py-12 lg:px-8 lg:py-16"
+    >
+      <div
+        className="
+          relative isolate mx-auto max-w-7xl
+          overflow-hidden rounded-3xl
+          px-6 py-14
+          lg:px-14 lg:py-20
+        "
+      >
         <Image
           src={SHARED_IMAGES.faq.background}
           alt=""
+          aria-hidden="true"
           fill
           sizes="(min-width: 1280px) 1280px, 100vw"
           className="-z-10 object-cover"
         />
 
-        <h2 className="text-center text-4xl uppercase leading-[1.1] text-foreground lg:text-[80px]">
+        <h2
+          id="faq-heading"
+          className="
+            text-center
+            text-3xl
+            uppercase
+            leading-[1.1]
+            text-foreground
+            lg:text-[88px]
+          "
+        >
           <span className="block font-light">
             {title.light}
           </span>
-          <span className="block font-semibold">
+
+          <span
+            className="
+              block
+              text-4xl
+              font-medium
+              lg:text-[120px]
+            "
+          >
             {title.bold}
           </span>
         </h2>
 
-        <ul className="mx-auto mt-10 flex max-w-3xl flex-col gap-3 lg:mt-14">
+        <ul
+          className="
+            mx-auto mt-10
+            flex max-w-3xl
+            flex-col gap-3
+            lg:mt-14
+          "
+        >
           {items.map((item, index) => (
             <FaqItem
               key={item.id}

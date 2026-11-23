@@ -7,7 +7,7 @@ const VARIANTS = {
   outline:
     "border-2 border-brand-primary bg-transparent text-foreground hover:bg-brand-gradient",
 
-  white: "bg-white text-black hover:bg-brand-primary hover:text-foreground",
+  white: "bg-foreground text-black hover:bg-brand-primary hover:text-foreground",
 
 };
 

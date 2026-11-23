@@ -11,10 +11,10 @@ export default function AboutHero() {
       contentClassName="md:pt-32"
     >
       <SharedHero.Title lines={ABOUT_HERO.titleLines} />
-      <SharedHero.Actions>
+      <SharedHero.Actions className="mt-0 sm:!mt-14">
         <SharedHero.Button
           href={ABOUT_HERO.primaryCta.href}
-          className="min-h-[66px] min-w-[240px]"
+          className="min-h-[66px] min-w-[240px] mt-0 sm:mt-10"
         >
           {ABOUT_HERO.primaryCta.label}
         </SharedHero.Button>
@@ -22,7 +22,7 @@ export default function AboutHero() {
         <SharedHero.Button
           href={ABOUT_HERO.secondaryCta.href}
           variant="outline"
-          className="min-h-[66px] min-w-[240px]"
+          className="min-h-[66px] min-w-[240px] mt-0 sm:mt-10"
         >
           {ABOUT_HERO.secondaryCta.label}
         </SharedHero.Button>

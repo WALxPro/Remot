@@ -11,7 +11,7 @@ export function ServiceShowcaseCard({ label, image }) {
         className="object-cover"
       />
 
-      <div className="absolute inset-0 flex items-center justify-center bg-white/10 backdrop-blur-[3px]">
+      <div className="absolute inset-0 flex items-center justify-center bg-foreground/10 backdrop-blur-[3px]">
         <h3 className="px-2 text-center text-[30px] font-sans font-normal uppercase text-foreground">
           {label}
         </h3>

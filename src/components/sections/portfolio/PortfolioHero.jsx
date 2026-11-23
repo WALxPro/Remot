@@ -22,7 +22,7 @@ export function PortfolioHero() {
         <SharedHero.Button
           href={primaryCta.href}
           variant="outline"
-          className="min-h-[66px] min-w-[240px]"
+          className="min-h-[66px] min-w-[240px] mt-0 sm:mt-14"
         >
           {primaryCta.label}
         </SharedHero.Button>

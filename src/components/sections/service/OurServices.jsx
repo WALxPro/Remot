@@ -19,7 +19,7 @@ const ServiceCard = ({ service }) => {
         gap-6
         rounded-lg
         border border-white/15
-        bg-white/10
+        bg-foreground/10
         p-5
         sm:p-6
         lg:min-h-[380px]

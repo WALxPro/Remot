@@ -18,7 +18,7 @@ export function ContactSection() {
   return (
     <section className="bg-transparent px-6 py-16 lg:px-16 lg:py-24">
       <div className="mx-auto grid max-w-7xl gap-x-[70px] gap-y-10 lg:grid-cols-[1.4fr_1fr]">
-        <h2 className="whitespace-pre-line text-[42px] font-medium uppercase leading-[1] sm:text-[65px] text-center sm:text-left">
+        <h2 className="whitespace-pre-line text-[35px] font-medium uppercase leading-[1] sm:text-[65px] text-center sm:text-left">
           {title}
         </h2>
 

@@ -15,7 +15,7 @@ function ServiceShowcaseCard({ label, image }) {
         className="object-cover"
       />
 
-      <div className="absolute inset-0 flex items-center justify-center bg-white/10 backdrop-blur-[3px]">
+      <div className="absolute inset-0 flex items-center justify-center bg-foreground/10 backdrop-blur-[3px]">
         <h3 className="px-3 text-center font-sans text-xl font-normal uppercase text-foreground sm:text-[26px] lg:text-[30px]">
           {label}
         </h3>

@@ -5,7 +5,7 @@ import { SERVICES } from "@/config/home/home";
 function ServiceCard({ label, icon }) {
   return (
     <div className="group flex w-full flex-col items-center gap-3 cursor-pointer">
-      <div className="flex h-[100px] w-full max-w-[170px] items-center justify-center rounded-[20px] border border-white bg-transparent transition hover:scale-105 hover:bg-white sm:h-[120px] sm:rounded-[25px] lg:h-[130px] lg:rounded-[30px]">
+      <div className="flex h-[100px] w-full max-w-[170px] items-center justify-center rounded-[20px] border border-white bg-transparent transition hover:scale-105 hover:bg-foreground sm:h-[120px] sm:rounded-[25px] lg:h-[130px] lg:rounded-[30px]">
         <Image
           src={icon}
           alt={label}

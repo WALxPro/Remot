@@ -97,7 +97,7 @@ export function ServicesMegaMenu({ onClose }) {
         </div>
 
         {/* SEARCH */}
-        <div className="mb-7 flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 px-4 py-3">
+        <div className="mb-7 flex items-center gap-3 rounded-xl border border-white/10 bg-foreground/5 px-4 py-3">
           <HiOutlineSearch className="text-xl text-foreground/50" />
 
           <input
@@ -157,7 +157,7 @@ export function ServicesMegaMenu({ onClose }) {
                     ${
                       isActive
                         ? "bg-brand-primary/10 text-brand-primary"
-                        : "text-foreground/70 hover:bg-white/5 hover:text-foreground"
+                        : "text-foreground/70 hover:bg-foreground/5 hover:text-foreground"
                     }
                   `}
                 >
@@ -216,7 +216,7 @@ export function ServicesMegaMenu({ onClose }) {
                         group flex min-h-[68px]
                         items-center justify-between
                         gap-3 rounded-lg border
-                        border-white/10 bg-white/5
+                        border-white/10 bg-foreground/5
                         px-4 py-3
                         transition-all duration-200
                         hover:border-brand-primary/50

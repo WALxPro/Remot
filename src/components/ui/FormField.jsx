@@ -1,7 +1,7 @@
 import { ChevronDown } from "lucide-react";
 
 const BASE =
-    "w-full rounded-[4px] bg-white h-[53px] px-7 text-base text-black placeholder:text-black outline-none transition focus:ring-2 focus:ring-brand-primary mb-2";
+    "w-full rounded-[4px] bg-foreground h-[53px] px-7 text-base text-black placeholder:text-black outline-none transition focus:ring-2 focus:ring-brand-primary mb-2";
 
 export function FormField({ name, label, type = "text", options, autoComplete }) {
     if (type === "textarea") {

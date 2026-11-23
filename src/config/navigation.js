@@ -1,4 +1,3 @@
-
 export const NAVBAR = {
   brand: {
     src: "/images/logo-remot.png",
@@ -14,7 +13,6 @@ export const NAVBAR = {
     { label: "Pricing", href: "/pricing" },
   ],
 };
-
 
 // Generate URL-friendly slugs
 const slugify = (text) =>
@@ -36,64 +34,48 @@ const createCategory = (id, title, services) => ({
 });
 
 export const SERVICE_MEGA_MENU = [
-  // 01
-  createCategory(
-    "illustration-digital-art",
-    "Illustration & Digital Art",
-    [
-      "Children's Book Illustrations",
-      "Character Design & Development",
-      "Digital Painting & Concept Art",
-      "Book Cover Design",
-      "Comic Book & Graphic Novel Illustrations",
-      "Fantasy & DnD Character Art",
-      "Storyboarding",
-      "Custom Illustrations",
-    ]
-  ),
+  // 01 - ILLUSTRATION & DIGITAL ART
+  createCategory("illustration-digital-art", "Illustration & Digital Art", [
+    "Children's Book Illustrations",
+    "Character Design & Development",
+    "Digital Painting & Concept Art",
+    "Book Cover Design",
+    "Comic Book & Graphic Novel Illustrations",
+    "Fantasy & DnD Character Art",
+    "Storyboarding",
+    "Custom Illustrations",
+  ]),
 
-  // 02
-  createCategory(
-    "2d-3d-animation",
-    "2D & 3D Animation",
-    [
-      "2D Character Animation",
-      "3D Modeling & Asset Creation",
-      "Motion Graphics",
-      "Animated Explainer Videos",
-      "Logo Animation",
-      "Character Rigging & Animation",
-    ]
-  ),
+  // 02 - 2D & 3D ANIMATION
+  createCategory("2d-3d-animation", "2D & 3D Animation", [
+    "2D Character Animation",
+    "3D Modeling & Asset Creation",
+    "Motion Graphics",
+    "Animated Explainer Videos",
+    "Logo Animation",
+    "Character Rigging & Animation",
+  ]),
 
-  // 03
-  createCategory(
-    "book-design-publishing",
-    "Book Design & Publishing",
-    [
-      "Ebook Design & Formatting",
-      "Book Layout & Typesetting",
-      "Children's Book Formatting",
-      "Print-Ready Book Design",
-      "KDP Publishing Formatting",
-    ]
-  ),
+  // 03 - BOOK DESIGN & PUBLISHING
+  createCategory("book-design-publishing", "Book Design & Publishing", [
+    "Ebook Design & Formatting",
+    "Book Layout & Typesetting",
+    "Children's Book Formatting",
+    "Print-Ready Book Design",
+    "KDP Publishing Formatting",
+  ]),
 
-  // 04
-  createCategory(
-    "graphic-design-branding",
-    "Graphic Design & Branding",
-    [
-      "Logo Design",
-      "Brand Identity Design",
-      "Social Media Graphics",
-      "Marketing & Advertising Designs",
-      "Posters, Flyers & Banners",
-      "Business Cards & Stationery",
-    ]
-  ),
+  // 04 - GRAPHIC DESIGN & BRANDING
+  createCategory("graphic-design-branding", "Graphic Design & Branding", [
+    "Logo Design",
+    "Brand Identity Design",
+    "Social Media Graphics",
+    "Marketing & Advertising Designs",
+    "Posters, Flyers & Banners",
+    "Business Cards & Stationery",
+  ]),
 
-  // 05
+  // 05 - VIDEO EDITING & POST-PRODUCTION
   createCategory(
     "video-editing-post-production",
     "Video Editing & Post-Production",
@@ -103,198 +85,77 @@ export const SERVICE_MEGA_MENU = [
       "Social Media Reels & Shorts",
       "Promotional & Advertisement Videos",
       "Color Grading & Visual Effects",
-    ]
+    ],
   ),
 
-  // 06 - DUMMY
-  createCategory(
-    "website-design-development",
-    "Website Design & Development",
-    [
-      "Custom Website Development",
-      "WordPress Development",
-      "Ecommerce Website Design",
-      "Landing Page Design",
-      "Website Redesign",
-      "Website Maintenance",
-    ]
-  ),
+  // 06 - WEBSITE DESIGN & DEVELOPMENT
+  createCategory("website-design-development", "Website Design & Development", [
+    "Website Development",
+    "Business Websites",
+    "E-Commerce Development",
+    "Custom Websites",
+    "Landing Pages",
+  ]),
 
-  // 07 - DUMMY
-  createCategory(
-    "ui-ux-design",
-    "UI/UX Design",
-    [
-      "Website UI Design",
-      "Mobile App UI Design",
-      "User Experience Research",
-      "Wireframing & Prototyping",
-      "Dashboard Design",
-    ]
-  ),
+  // 07 - CHATBOT DEVELOPMENT
+  createCategory("chatbot-development", "Chatbot Development", [
+    "AI Chatbot",
+    "Rules Based Chatbot",
+  ]),
 
-  // 08 - DUMMY
-  createCategory(
-    "digital-marketing",
-    "Digital Marketing",
-    [
-      "Digital Marketing Strategy",
-      "Social Media Marketing",
-      "Email Marketing",
-      "Content Marketing",
-      "Influencer Marketing",
-    ]
-  ),
+  // 08 - DIGITAL MARKETING
+  createCategory("digital-marketing", "Digital Marketing", [
+    "Search Engine Optimization (SEO)",
+    "Social Media Marketing & Management",
+    "Google Ads & PPC Advertising",
+    "Meta Ads (Facebook & Instagram)",
+    "Content Marketing & Strategy",
+    "Email Marketing & Automation",
+    "Influencer Marketing & Outreach",
+    "Digital Marketing Strategy & Consulting",
+    "Conversion Rate Optimization (CRO)",
+    "Analytics, Tracking & Performance Reporting",
+  ]),
 
-  // 09 - DUMMY
-  createCategory(
-    "seo-search-marketing",
-    "SEO & Search Marketing",
-    [
-      "On-Page SEO",
-      "Technical SEO",
-      "Keyword Research",
-      "Link Building",
-      "Local SEO",
-    ]
-  ),
+  // 09 - MOBILE APP DEVELOPMENT
+  createCategory("mobile-app-development", "Mobile App Development", [
+    "Cross-platform Development",
+    "Android App Development",
+    "iOS App Development",
+    "Mobile App Maintenance",
+  ]),
 
-  // 10 - DUMMY
-  createCategory(
-    "content-writing-copywriting",
-    "Content Writing & Copywriting",
-    [
-      "Website Copywriting",
-      "Blog & Article Writing",
-      "Product Descriptions",
-      "Advertising Copywriting",
-      "SEO Content Writing",
-    ]
-  ),
+  // 10 - SOFTWARE DEVELOPMENT
+  createCategory("software-development", "Software Development", [
+    "Full Stack Web Apps",
+    "Automations & Agents",
+    "APIs & Integrations",
+    "Databases",
+    "QA & Review",
+    "User Testing",
+  ]),
 
-  // 11 - DUMMY
-  createCategory(
-    "social-media-management",
-    "Social Media Management",
-    [
-      "Social Media Strategy",
-      "Content Calendar Planning",
-      "Instagram Management",
-      "Facebook Page Management",
-      "Social Media Content Creation",
-    ]
-  ),
+  // 11 - CLOUD
+  createCategory("cloud", "Cloud", ["Cloud Computing", "DevOps Engineering"]),
 
-  // 12 - DUMMY
-  createCategory(
-    "photography-retouching",
-    "Photography & Retouching",
-    [
-      "Product Photography",
-      "Photo Retouching",
-      "Background Removal",
-      "Image Color Correction",
-      "Creative Photo Manipulation",
-    ]
-  ),
+  // 12 - WEBSITE MAINTENANCE
+  createCategory("website-maintenance", "Website Maintenance", [
+    "Website Customization",
+    "Bug Fixes",
+    "Backup & Migration",
+    "Speed Optimization",
+  ]),
 
-  // 13 - DUMMY
-  createCategory(
-    "presentation-design",
-    "Presentation Design",
-    [
-      "PowerPoint Presentation Design",
-      "Pitch Deck Design",
-      "Business Presentation Design",
-      "Investor Deck Design",
-    ]
-  ),
+  // 13 - AI DEVELOPMENT
+  createCategory("ai-development", "AI Development", [
+    "AI Websites & Software",
+    "AI Mobile Apps",
+    "AI Integrations",
+    "AI Agents",
+    "AI Technology Consulting",
+  ]),
 
-  // 14 - DUMMY
-  createCategory(
-    "packaging-label-design",
-    "Packaging & Label Design",
-    [
-      "Product Packaging Design",
-      "Food Packaging Design",
-      "Label & Sticker Design",
-      "Box & Carton Design",
-    ]
-  ),
-
-  // 15 - DUMMY
-  createCategory(
-    "advertising-campaign-design",
-    "Advertising & Campaign Design",
-    [
-      "Google Ads Creatives",
-      "Facebook Ads Creatives",
-      "Instagram Ads Design",
-      "Banner Advertising Design",
-      "Campaign Visual Design",
-    ]
-  ),
-
-  // 16 - DUMMY
-  createCategory(
-    "audio-editing-production",
-    "Audio Editing & Production",
-    [
-      "Podcast Editing",
-      "Audio Cleanup",
-      "Voiceover Editing",
-      "Sound Design",
-    ]
-  ),
-
-  // 17 - DUMMY
-  createCategory(
-    "mobile-app-development",
-    "Mobile App Development",
-    [
-      "Android App Development",
-      "iOS App Development",
-      "Cross-Platform App Development",
-      "App Maintenance",
-    ]
-  ),
-
-  // 18 - DUMMY
-  createCategory(
-    "3d-visualization-rendering",
-    "3D Visualization & Rendering",
-    [
-      "3D Product Rendering",
-      "Architectural Visualization",
-      "Interior 3D Rendering",
-      "3D Environment Design",
-    ]
-  ),
-
-  // 19 - DUMMY
-  createCategory(
-    "merchandise-apparel-design",
-    "Merchandise & Apparel Design",
-    [
-      "T-Shirt Design",
-      "Hoodie & Sweatshirt Design",
-      "Custom Merchandise Artwork",
-      "Print-On-Demand Design",
-    ]
-  ),
-
-  // 20 - DUMMY
-  createCategory(
-    "creative-strategy-consulting",
-    "Creative Strategy & Consulting",
-    [
-      "Creative Direction",
-      "Brand Strategy",
-      "Visual Content Strategy",
-      "Creative Campaign Planning",
-      "Brand Audit & Consultation",
-    ]
-  ),
+  
 ];
 
 export const FOOTER = {

@@ -42,9 +42,6 @@ export const SERVICES_SHOWCASE = {
   activeService: "BRAND IDENTITY",
 };
 
-
-
-
 export const HOW_WE_WORK = {
   steps: [
     {

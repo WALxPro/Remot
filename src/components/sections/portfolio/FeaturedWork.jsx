@@ -32,7 +32,7 @@ export function FeaturedWork() {
   const { title, description, cta, images } = FEATURED_WORK;
 
   return (
-    <div className="relative lg:min-h-[200vh]">
+    <div className="relative py-[32]">
       <section className="flex h-full w-full flex-col items-center justify-center overflow-hidden bg-transparent px-4 py-16 text-center sm:px-6 lg:py-0">
 
         {/* Heading */}

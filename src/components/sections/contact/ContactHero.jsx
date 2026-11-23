@@ -7,7 +7,7 @@ export default function ContactHero() {
   return (
     <SharedHero
       background={SHARED_IMAGES.hero}
-      className="min-h-[550px] sm:min-h-[650px] "
+      className="min-h-[450px] sm:min-h-[650px] "
       contentClassName="md:pt-32"
     >
       <SharedHero.Title lines={CONTACT_HERO.titleLines} />
@@ -15,7 +15,7 @@ export default function ContactHero() {
         <SharedHero.Button
           href={CONTACT_HERO.cta.href}
           variant="outline"
-          className="min-h-[60px] min-w-[220px]"
+          className="min-h-[60px] min-w-[220px] mt-0 sm:mt-14"
         >
           {CONTACT_HERO.cta.label}
         </SharedHero.Button>

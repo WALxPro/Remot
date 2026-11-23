@@ -43,7 +43,7 @@ function ClientMarquee({ logos, reverse = false }) {
 
 export function ClientsSection() {
   return (
-    <section className="overflow-hidden bg-white py-6 sm:py-16 lg:py-10">
+    <section className="overflow-hidden bg-foreground py-6 sm:py-16 lg:py-10">
       <div className="mx-auto max-w-7xl px-4">
         <h2 className="mb-5 text-center font-sans text-xl font-medium uppercase text-brand-primary sm:mb-10 sm:text-[50px]">
           {CLIENTS.title}
