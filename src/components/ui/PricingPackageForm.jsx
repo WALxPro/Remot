@@ -2,7 +2,7 @@
 import { SPECIFIC_SERVICES } from "@/config/pricing/pricing";
 
 const FIELD_STYLES =
-  "h-12 w-full rounded-[5px] border border-gray-300 bg-white px-4 text-sm text-black outline-none transition-colors focus-visible:border-brand-primary focus-visible:ring-2 focus-visible:ring-brand-primary/20";
+  "h-12 w-full rounded-[5px] border border-gray-300 bg-foreground px-4 text-sm text-black outline-none transition-colors focus-visible:border-brand-primary focus-visible:ring-2 focus-visible:ring-brand-primary/20";
 
 const BUTTON_STYLES =
   "flex min-h-[50px] w-full items-center justify-center rounded-[5px] bg-black px-4 text-sm font-medium text-white transition-opacity hover:opacity-90";

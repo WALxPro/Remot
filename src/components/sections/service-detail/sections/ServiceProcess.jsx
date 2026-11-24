@@ -6,7 +6,7 @@ import { Paragraph } from "@/components/ui/Paragraph";
 
 function ProcessCard({ step }) {
   return (
-    <article className="flex h-[300px] w-full max-w-[300px] flex-col items-center justify-center rounded-md bg-white px-5 py-5 text-center text-black shadow-lg">
+    <article className="flex h-[300px] w-full max-w-[300px] flex-col items-center justify-center rounded-md bg-foreground px-5 py-5 text-center text-black shadow-lg">
       {step.icon && (
         <div className="relative mb-3 h-[94px] w-[94px] shrink-0">
           <Image
@@ -39,7 +39,7 @@ function ProcessStep({ step, index }) {
       <span
         aria-hidden="true"
         className={`absolute left-0 top-8 z-10 h-4 w-4 rounded-full border-2 border-white lg:static lg:row-start-2 lg:self-center lg:justify-self-center ${
-          index < 2 ? "bg-brand-primary" : "bg-white"
+          index < 2 ? "bg-brand-primary" : "bg-foreground"
         }`}
       />
 

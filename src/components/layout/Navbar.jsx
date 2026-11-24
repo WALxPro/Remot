@@ -7,8 +7,16 @@ import { HiMenu, HiX, HiChevronDown } from "react-icons/hi";
 
 import { NAVBAR } from "@/config/navigation";
 import { Button } from "@/components/ui/Button";
-import { MobileMenu } from "./MobileMenu";
-import { ServicesMegaMenu } from "./ServicesMegaMenu";
+
+import dynamic from "next/dynamic";
+
+const MobileMenu = dynamic(() =>
+  import("./MobileMenu").then((mod) => mod.MobileMenu),
+);
+
+const ServicesMegaMenu = dynamic(() =>
+  import("./ServicesMegaMenu").then((mod) => mod.ServicesMegaMenu),
+);
 
 export function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -159,7 +167,7 @@ export function Navbar() {
       )}
 
       {/* MOBILE NAVIGATION */}
-      <MobileMenu isOpen={isMenuOpen} onClose={closeMenu} />
+      {isMenuOpen && <MobileMenu isOpen={isMenuOpen} onClose={closeMenu} />}
     </header>
   );
 }
