@@ -37,13 +37,13 @@ export default function RootLayout({ children }) {
       className={`${sansation.variable} ${poppins.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col">
-        <Navbar />
+        {/* <Navbar /> */}
 
         <main className="flex-1">
           {children}
         </main>
 
-        <Footer />
+        {/* <Footer /> */}
       </body>
     </html>
   );
