@@ -21,7 +21,7 @@ function HeroRoot({
       {background && (
         <Image
           src={background}
-          alt="hero-background"
+          alt=""
           fill
           priority={priority}
           sizes="100vw"
@@ -76,7 +76,7 @@ function HeroDescription({
   return (
     <Paragraph
       className={twMerge(
-        "mx-auto mt-6 max-w-4xl text-center text-[25px]",
+        "mx-auto mt-6 max-w-4xl text-center text-base sm:text-[25px]",
         className
       )}
     >

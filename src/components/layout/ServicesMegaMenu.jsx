@@ -132,7 +132,7 @@ export function ServicesMegaMenu({ onClose }) {
               Service Categories
             </p>
 
-            {filteredCategories.map((category, index) => {
+            {filteredCategories.map((category) => {
               const isActive =
                 activeCategory?.id === category.id;
 

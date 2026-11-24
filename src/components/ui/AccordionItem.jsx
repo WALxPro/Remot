@@ -2,13 +2,15 @@ export function AccordionItem({ index, id, title, description, isOpen, onToggle 
   const number = String(index + 1).padStart(2, "0");
 
   return (
-<div className="border-t border-transparent accordion-gradient-border last:border-b">      <h3 className="text-[24px] font-sans font-normal uppercase">
+    <div className="border-t border-transparent accordion-gradient-border last:border-b">
+      <h3 className="text-[24px] font-sans font-normal uppercase">
         <button
+          id={`accordion-button-${id}`}
           type="button"
           onClick={onToggle}
           aria-expanded={isOpen}
           aria-controls={`panel-${id}`}
-          className="flex w-full items-center justify-between py-5 text-left"
+          className="flex w-full items-center justify-between py-5 text-left focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-primary"
         >
           <span>
             <span className="mr-3">{number}</span>
@@ -36,6 +38,10 @@ export function AccordionItem({ index, id, title, description, isOpen, onToggle 
 
       <div
         id={`panel-${id}`}
+        role="region"
+        aria-labelledby={`accordion-button-${id}`}
+        aria-hidden={!isOpen}
+        inert={!isOpen}
         className={`grid transition-[grid-template-rows] duration-300 ${
           isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
         }`}

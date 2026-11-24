@@ -15,10 +15,16 @@ export function WhyWorkWithUs() {
 
   return (
     <div className="relative lg:h-[80vh]">
-      <section className="flex h-full flex-col justify-center bg-transparent px-6 py-10 sm:py-0 ">
+      <section
+        aria-labelledby="why-work-heading"
+        className="flex h-full flex-col justify-center bg-transparent px-6 py-10 sm:py-0 "
+      >
         <div className="mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-15 lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] lg:gap-10">
           <div className="min-w-0">
-            <h2 className="mb-10 text-3xl font-medium uppercase leading-tight sm:text-4xl lg:text-[54px] lg:leading-[78px]">
+            <h2
+              id="why-work-heading"
+              className="mb-10 text-3xl font-medium uppercase leading-tight sm:text-4xl lg:text-[54px] lg:leading-[78px]"
+            >
               {WHY_US.title}
             </h2>
 

@@ -1,16 +1,11 @@
 export const IMAGES = {
- specificService : {
-    service : "/images/brand.webp"
- },
-
-featured: {
-  feature1: "/images/feature-1.webp",
-  feature2: "/images/feature-2.webp",
-  feature3: "/images/feature-3.webp",
-  feature4: "/images/feature-4.webp",
-  feature5: "/images/feature-5.webp",
-},
-
+  featured: {
+    feature1: "/images/feature-1.webp",
+    feature2: "/images/feature-2.webp",
+    feature3: "/images/feature-3.webp",
+    feature4: "/images/feature-4.webp",
+    feature5: "/images/feature-5.webp",
+  },
 };
 
 export const PORTFOLIO_HERO = {
@@ -22,26 +17,6 @@ export const PORTFOLIO_HERO = {
   primaryCta: { label: "Let's Work Together", href: "/contact" },
 };
  
-export const SPECIFIC_SERVICES = {
-  title: "SPECIFIC SERVICES",
-  packageTitle: "Make Your Own Package",
-
-  image: {
-    src: IMAGES.specificService.service,
-    alt: "Creative design sketches",
-  },
-
-  services: [
-    "Animation",
-    "Video Editing",
-    "Branding",
-    "Ebook Design",
-    "Illustration",
-    "Social Media",
-  ],
-};
-
-
 export const FEATURED_WORK = {
   title: "FEATURED WORK",
   description:

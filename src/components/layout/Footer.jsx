@@ -14,7 +14,7 @@ export function Footer() {
         <div>
           <Image
             src="/images/logo-remot.png"
-            alt="logo"
+            alt="Studio Remot"
             width={419}
             height={135}
             className="h-auto w-[419px]"

@@ -5,7 +5,7 @@ import { SHARED_IMAGES } from "@/config/shared/shared";
 export function HomeHero() {
   return (
     <SharedHero background={SHARED_IMAGES.hero} className="relative sm:h-[1000px]">
-      <SharedHero.Title lines={HERO.titleLines} />
+      <SharedHero.Title className="text-[24px] leading-tight md:text-[98px] md:leading-[97px]" lines={HERO.titleLines} />
 
       <SharedHero.Description>{HERO.description}</SharedHero.Description>
 

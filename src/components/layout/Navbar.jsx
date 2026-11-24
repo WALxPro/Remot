@@ -15,6 +15,7 @@ export function Navbar() {
   const [isMegaOpen, setIsMegaOpen] = useState(false);
 
   const headerRef = useRef(null);
+  const mobileMenuButtonRef = useRef(null);
   const servicesButtonRef = useRef(null);
 
   const closeMenu = () => setIsMenuOpen(false);
@@ -23,9 +24,16 @@ export function Navbar() {
   useEffect(() => {
     const handleKeyDown = (event) => {
       if (event.key === "Escape") {
+        if (!isMenuOpen && !isMegaOpen) return;
+
+        event.preventDefault();
         setIsMegaOpen(false);
         setIsMenuOpen(false);
-        servicesButtonRef.current?.focus();
+        if (isMenuOpen) {
+          mobileMenuButtonRef.current?.focus();
+        } else {
+          servicesButtonRef.current?.focus();
+        }
       }
     };
 
@@ -42,7 +50,7 @@ export function Navbar() {
       document.removeEventListener("keydown", handleKeyDown);
       document.removeEventListener("pointerdown", handlePointerDown);
     };
-  }, []);
+  }, [isMenuOpen, isMegaOpen]);
 
   return (
     <header
@@ -128,6 +136,7 @@ export function Navbar() {
 
         {/* MOBILE MENU BUTTON */}
         <button
+          ref={mobileMenuButtonRef}
           type="button"
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           aria-expanded={isMenuOpen}

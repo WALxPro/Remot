@@ -109,6 +109,13 @@ h6 {
   background-position: center top;
   background-size: 100% 100%;
 }
+.service-inner-background {
+  background-color: var(--background);
+  background-image: url("/images/service-inner-page-bg.webp");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: 100% 100%;
+}
 .bg-footer-image {
   background-color: var(--background);
   background-image: url("/images/footer-bg.webp");
@@ -202,6 +209,7 @@ h6 {
 
 .service-slider {
   animation: service-scroll 18s linear infinite;
+  animation-play-state: var(--marquee-play-state, running);
 }
 
 /* =========================
@@ -230,6 +238,7 @@ h6 {
 
 .client-marquee {
   animation: client-scroll 25s linear infinite;
+  animation-play-state: var(--marquee-play-state, running);
 }
 
 .client-marquee-reverse {
@@ -248,6 +257,7 @@ h6 {
 
 .studio-banner-scroll {
   animation: studio-banner-scroll 25s linear infinite;
+  animation-play-state: var(--marquee-play-state, running);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -284,5 +294,25 @@ h6 {
   .studio-banner {
     line-height: 1.65;
     letter-spacing: -0.025em;
+  }
+}
+
+
+
+@media (max-width: 639px) {
+  .portfolio-card {
+    transform: translateX(-50%) scale(1) !important;
+    filter: none !important;
+  }
+
+  .portfolio-card:not(.portfolio-card-active) {
+    opacity: 0 !important;
+    pointer-events: none !important;
+    visibility: hidden;
+  }
+
+  .portfolio-card-active {
+    opacity: 1 !important;
+    visibility: visible;
   }
 }

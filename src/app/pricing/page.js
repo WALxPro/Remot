@@ -1,4 +1,3 @@
-import { RoutePlaceholder } from "@/components/layout/RoutePlaceholder";
 import {PricingHero} from "@/components/sections/pricing/PricingHero";
 import { PricingSection } from "@/components/sections/pricing/PricingSection";
 import { SpecificServices } from "@/components/sections/pricing/SpecificServices";
