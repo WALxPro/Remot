@@ -17,9 +17,10 @@ export function ServiceCard({
         <span
           aria-hidden="true"
           className="w-fit font-display text-[clamp(48px,5vw,64px)] font-medium leading-none text-foreground/10"
-          style={{
-            filter: `url(#${filterId})`,
-          }}
+          // style={{
+          //   filter: `url(#${filterId})`,
+          // }}
+          style={{ filter: "none" }}
         >
           {number}
         </span>
