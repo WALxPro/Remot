@@ -1,15 +1,17 @@
-
 import { PricingCard } from "@/components/ui/PricingCard";
-import { PRICING } from "@/config/pricing/pricing";
 
-export function PricingSection() {
-  const { title, plans } = PRICING;
+export function PricingPlans({
+  pricing,
+  sectionClassName = "",
+  gridClassName = "",
+}) {
+  const { title, plans } = pricing;
 
   return (
     <section
       id="pricing"
       aria-labelledby="pricing-heading"
-      className="
+      className={`
         relative
         flex
         min-h-screen
@@ -21,7 +23,8 @@ export function PricingSection() {
         py-16
         sm:py-20
         lg:py-24
-      "
+        ${sectionClassName}
+      `}
     >
       <div className="mx-auto w-full max-w-7xl">
         <h2
@@ -40,20 +43,19 @@ export function PricingSection() {
         </h2>
 
         <div
-          className="
+          className={`
             mx-auto
             mt-12
             grid
             w-full
-            max-w-[1200px]
             grid-cols-1
             items-stretch
             gap-6
             sm:mt-16
             sm:grid-cols-2
-            lg:grid-cols-3
             lg:gap-8
-          "
+            ${gridClassName}
+          `}
         >
           {plans.map((plan) => (
             <PricingCard

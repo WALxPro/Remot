@@ -1,5 +1,5 @@
 import {PricingHero} from "@/components/sections/pricing/PricingHero";
-import { PricingSection } from "@/components/sections/pricing/PricingSection";
+import { PricingPageSection } from "@/components/sections/pricing/PricingPageSection";
 import { SpecificServices } from "@/components/sections/pricing/SpecificServices";
 import { ContactSection } from "@/components/shared/ContactSection";
 import { FaqSection } from "@/components/shared/FaqSection";
@@ -10,7 +10,7 @@ export default function PricingPage() {
   return (
     <div className="pricing-background">
       <PricingHero />
-      <PricingSection/>
+      <PricingPageSection/>
       <SpecificServices />
       <StudioBanner />
       <FaqSection />

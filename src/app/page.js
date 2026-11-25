@@ -7,9 +7,9 @@ import { PortfolioShowcase } from "@/components/sections/home/PortfolioShowcase"
 import { FaqSection } from "@/components/shared/FaqSection";
 import { ContactSection } from "@/components/shared/ContactSection";
 import { ClientsSection } from "@/components/sections/home/ClientsSection";
-import { PricingSection } from "@/components/sections/home/PricingSection";
 import { StudioBanner } from "@/components/shared/StudioBanner";
 import { CreativeSection } from "@/components/sections/home/CreativeSection";
+import { HomePricingSection } from "@/components/sections/home/HomePricingSection";
 
 export default function Home() {
   return (
@@ -23,7 +23,7 @@ export default function Home() {
       <PortfolioShowcase />
       <CreativeSection />
       <ClientsSection />
-      <PricingSection />
+      <HomePricingSection />
       <FaqSection />
       <ContactSection />
     </div>
