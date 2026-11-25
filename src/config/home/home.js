@@ -23,7 +23,7 @@ export const IMAGES = {
     seoDigitalMarketing: "/images/home/seo-digital-marketing-service.webp",
   },
   portfolio: {
-    background: "/images/hero.webp",
+    background: "/images/shared/hero.webp",
     mood: "/images/home/mood.webp",
     zine: "/images/home/zine.webp",
     branding: "/images/home/brand.webp",

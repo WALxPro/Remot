@@ -1,6 +1,6 @@
 export const IMAGES = {
  specificService : {
-    service : "/images/shared/brand.webp"
+    service : "/images/pricing/brand.webp"
  }
 };
 

@@ -73,7 +73,7 @@ h6 {
 
 .service-background {
   background-color: var(--background);
-  background-image: url("/images/service-bg.webp");
+  background-image: url("/images/service/service-bg.webp");
   background-repeat: no-repeat;
   background-position: center top;
   background-size: 100% 100%;
@@ -82,7 +82,7 @@ h6 {
 
 .contact-background {
   background-color: var(--background);
-  background-image: url("/images/contact-bg.webp");
+  background-image: url("/images/contact/contact-bg.webp");
   background-repeat: no-repeat;
   background-position: center top;
   background-size: 100% 100%;
@@ -90,7 +90,7 @@ h6 {
 
 .pricing-background {
   background-color: var(--background);
-  background-image: url("/images/pricing-bg.webp");
+  background-image: url("/images/pricing/pricing-bg.webp");
   background-repeat: no-repeat;
   background-position: center top;
   background-size: 100% 100%;
@@ -112,7 +112,7 @@ h6 {
 
 .service-inner-background {
   background-color: var(--background);
-  background-image: url("/images/service-inner-page-bg.webp");
+  background-image: url("/images/service/service-inner-page-bg.webp");
   background-repeat: no-repeat;
   background-position: center top;
   background-size: 100% 100%;

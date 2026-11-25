@@ -152,8 +152,6 @@ export const SERVICE_MEGA_MENU = [
     "AI Agents",
     "AI Technology Consulting",
   ]),
-
-  
 ];
 
 export const FOOTER = {
@@ -178,7 +176,6 @@ export const FOOTER = {
       ],
     },
 
-    // All main service categories
     {
       title: "Services",
       links: SERVICE_MEGA_MENU.map((category) => ({
@@ -186,8 +183,6 @@ export const FOOTER = {
         href: category.href,
       })),
     },
-
-
   ],
 
   contact: {
