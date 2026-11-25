@@ -25,18 +25,102 @@ export const SERVICES_SHOWCASE = {
   sideLabel: "SCROLL DOWN",
 
   services: [
-    "MOBILE APP DEVELOPMENT",
-    "WEB HOSTING",
-    "BRAND IDENTITY",
-    "DIGITAL MARKETING",
-    "UI/UX DESIGN",
-    "E-COMMERCE SOLUTIONS",
-    "SEO OPTIMIZATION",
-    "CONTENT CREATION",
-    "CUSTOM DEVELOPMENT",
-    "SOCIAL MEDIA MARKETING",
-    "GRAPHIC DESIGN",
-    "DIGITAL CONSULTING",
+    {
+      title: "MOBILE APP DEVELOPMENT",
+      href: "/services/mobile-app-development",
+      images: {
+        left: "/images/mobile-app-left.webp",
+        right: "/images/mobile-app-right.webp",
+      },
+    },
+    {
+      title: "WEB HOSTING",
+      href: "/services/cloud",
+      images: {
+        left: "/images/web-hosting-left.webp",
+        right: "/images/web-hosting-right.webp",
+      },
+    },
+    {
+      title: "BRAND IDENTITY",
+      href: "/services/brand-identity-design",
+      images: {
+        left: "/images/brand-identity-left.webp",
+        right: "/images/brand-identity-right.webp",
+      },
+    },
+    {
+      title: "DIGITAL MARKETING",
+      href: "/services/digital-marketing",
+      images: {
+        left: "/images/digital-marketing-left.webp",
+        right: "/images/digital-marketing-right.webp",
+      },
+    },
+    {
+      title: "UI/UX DESIGN",
+      href: "/services/website-design-development",
+      images: {
+        left: "/images/ui-ux-left.webp",
+        right: "/images/ui-ux-right.webp",
+      },
+    },
+    {
+      title: "E-COMMERCE SOLUTIONS",
+      href: "/services/e-commerce-development",
+      images: {
+        left: "/images/ecommerce-left.webp",
+        right: "/images/ecommerce-right.webp",
+      },
+    },
+    {
+      title: "SEO OPTIMIZATION",
+      href: "/services/search-engine-optimization-seo",
+      images: {
+        left: "/images/seo-left.webp",
+        right: "/images/seo-right.webp",
+      },
+    },
+    {
+      title: "CONTENT CREATION",
+      href: "/services/content-marketing-and-strategy",
+      images: {
+        left: "/images/content-creation-left.webp",
+        right: "/images/content-creation-right.webp",
+      },
+    },
+    {
+      title: "CUSTOM DEVELOPMENT",
+      href: "/services/software-development",
+      images: {
+        left: "/images/custom-development-left.webp",
+        right: "/images/custom-development-right.webp",
+      },
+    },
+    {
+      title: "SOCIAL MEDIA MARKETING",
+      href: "/services/social-media-marketing-and-management",
+      images: {
+        left: "/images/social-media-left.webp",
+        right: "/images/social-media-right.webp",
+      },
+    },
+    {
+      title: "GRAPHIC DESIGN",
+      href: "/services/graphic-design-branding",
+      images: {
+        left: "/images/graphic-design-left.webp",
+        right: "/images/graphic-design-right.webp",
+      },
+    },
+    {
+      title: "DIGITAL CONSULTING",
+      href: "/services/digital-marketing-strategy-and-consulting",
+      images: {
+        left: "/images/digital-consulting-left.webp",
+        right: "/images/digital-consulting-right.webp",
+      },
+    },
   ],
 
   activeService: "BRAND IDENTITY",

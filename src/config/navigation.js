@@ -14,7 +14,6 @@ export const NAVBAR = {
   ],
 };
 
-// Generate URL-friendly slugs
 const slugify = (text) =>
   text
     .toLowerCase()
@@ -22,7 +21,6 @@ const slugify = (text) =>
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-|-$/g, "");
 
-// Creates a category and its subservice links
 const createCategory = (id, title, services) => ({
   id,
   title,
@@ -160,9 +158,13 @@ export const SERVICE_MEGA_MENU = [
 
 export const FOOTER = {
   brand: {
-    logo: { src: "logo.png", alt: "Studio Remot" },
+    logo: {
+      src: "/images/logo-remot.png",
+      alt: "Studio Remot",
+    },
     tagline: "Creativity Has No Borders",
   },
+
   columns: [
     {
       title: "Quick Links",
@@ -175,34 +177,33 @@ export const FOOTER = {
         { label: "Pricing", href: "/pricing" },
       ],
     },
+
+    // All main service categories
     {
       title: "Services",
-      links: [
-        { label: "Illustration", href: "/services/illustration" },
-        { label: "Book Cover Design", href: "/services/book-cover-design" },
-        { label: "Social Media Design", href: "/services/social-media-design" },
-        {
-          label: "SEO & Digital Marketing",
-          href: "/services/seo-digital-marketing",
-        },
-        { label: "2D Explainer Videos", href: "/services/2d-explainer-videos" },
-        { label: "Motion Graphics", href: "/services/motion-graphics" },
-        {
-          label: "Hand-Drawn 2D Animation",
-          href: "/services/hand-drawn-2d-animation",
-        },
-        { label: "3D Assets", href: "/services/3d-assets" },
-        { label: "Video Editing", href: "/services/video-editing" },
-        { label: "Web Development", href: "/services/web-development" },
-      ],
+      links: SERVICE_MEGA_MENU.map((category) => ({
+        label: category.title,
+        href: category.href,
+      })),
     },
+
+
   ],
+
   contact: {
     title: "Contact",
     items: [
-      { label: "hello@kreativon.com", href: "mailto:hello@kreativon.com" },
-      { label: "+62 862-3456-9999", href: "tel:+628623456999" },
-      { label: "Indonesia" },
+      {
+        label: "hello@kreativon.com",
+        href: "mailto:hello@kreativon.com",
+      },
+      {
+        label: "+62 862-3456-9999",
+        href: "tel:+628623456999",
+      },
+      {
+        label: "Indonesia",
+      },
     ],
   },
 
