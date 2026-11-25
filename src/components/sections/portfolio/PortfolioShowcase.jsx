@@ -28,9 +28,15 @@ function PortfolioCard({ image, index, total }) {
 }
 
 export function PortfolioShowcase() {
-  const { heading, background, images } =
-    PORTFOLIO_SHOWCASE;
+  const { heading, background, images } = PORTFOLIO_SHOWCASE;
 
+  const orbitImages = Array.from(
+    { length: images.length ? 14 : 0 },
+    (_, index) => ({
+      ...images[index % images.length],
+      orbitId: index,
+    }),
+  );
   return (
     <section
       className={`
@@ -59,12 +65,12 @@ export function PortfolioShowcase() {
       {/* ROTATING PORTFOLIO RING */}
       <div className={styles.orbitContainer}>
         <div className={styles.orbit}>
-          {images.map((image, index) => (
+          {orbitImages.map((image, index) => (
             <PortfolioCard
-              key={image.id}
+              key={image.orbitId}
               image={image}
               index={index}
-              total={images.length}
+              total={orbitImages.length}
             />
           ))}
         </div>

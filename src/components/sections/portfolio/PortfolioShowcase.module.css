@@ -1,15 +1,15 @@
 .section {
-  --orbit-radius: clamp(245px, 40vw, 780px);
-  --card-width: clamp(100px, 12.5vw, 240px);
+  --orbit-radius: clamp(240px, 38vw, 680px);
+  --card-width: clamp(110px, 12vw, 230px);
 
-  height: clamp(440px, 60vw, 1000px);
+  height: clamp(440px, 55vw, 900px);
 }
 
 /* CIRCULAR CONTAINER */
 
 .orbitContainer {
   position: absolute;
-  top: 76%;
+  top: 85%;
   left: 50%;
 
   width: calc(var(--orbit-radius) * 2);
@@ -26,11 +26,9 @@
   height: 100%;
 
   animation: portfolioRotation 55s linear infinite;
-
   will-change: transform;
 }
-
-/* INDIVIDUAL CARD POSITION */
+/* CARD POSITION */
 
 .cardPosition {
   position: absolute;
@@ -59,34 +57,25 @@
   transition: scale 0.3s ease;
 }
 
-.card:hover {
-  scale: 1.06;
-}
 
 /* FIXED HEADING */
 
 .heading {
-  top: 60%;
+  top: 65%;
   transform: translateY(-50%);
 }
 
-/* PAUSE ON HOVER */
 
-@media (hover: hover) {
-  .orbitContainer:hover .orbit {
-    animation-play-state: paused;
-  }
-}
 
-/* ROTATION ANIMATION */
+/* ROTATION */
 
 @keyframes portfolioRotation {
   from {
-    transform: rotate(-18deg);
+    transform: rotate(0deg);
   }
 
   to {
-    transform: rotate(342deg);
+    transform: rotate(360deg);
   }
 }
 
@@ -94,8 +83,8 @@
 
 @media (max-width: 1024px) {
   .section {
-    --orbit-radius: 43vw;
-    --card-width: 14vw;
+    --orbit-radius: 38vw;
+    --card-width: 13vw;
 
     height: 65vw;
     min-height: 440px;
@@ -106,8 +95,8 @@
 
 @media (max-width: 640px) {
   .section {
-    --orbit-radius: 270px;
-    --card-width: 105px;
+    --orbit-radius: 245px;
+    --card-width: 90px;
 
     height: 440px;
   }
