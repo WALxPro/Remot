@@ -112,10 +112,16 @@ h6 {
 
 .service-inner-background {
   background-color: var(--background);
-  background-image: url("/images/service/service-inner-page-bg.webp");
+  background-image: url("/images/service/service-inner-page-bg-desktop.webp");
   background-repeat: no-repeat;
   background-position: center top;
   background-size: 100% 100%;
+}
+
+@media (max-width: 768px) {
+  .service-inner-background {
+    background-image: url("/images/service/service-inner-page-bg-mobile.webp");
+  }
 }
 
 

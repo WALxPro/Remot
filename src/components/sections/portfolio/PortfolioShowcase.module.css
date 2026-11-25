@@ -1,0 +1,134 @@
+.section {
+  --orbit-radius: clamp(245px, 40vw, 780px);
+  --card-width: clamp(100px, 12.5vw, 240px);
+
+  height: clamp(440px, 60vw, 1000px);
+}
+
+/* CIRCULAR CONTAINER */
+
+.orbitContainer {
+  position: absolute;
+  top: 76%;
+  left: 50%;
+
+  width: calc(var(--orbit-radius) * 2);
+  height: calc(var(--orbit-radius) * 2);
+
+  transform: translate(-50%, -50%);
+}
+
+/* ROTATING RING */
+
+.orbit {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  animation: portfolioRotation 55s linear infinite;
+
+  will-change: transform;
+}
+
+/* INDIVIDUAL CARD POSITION */
+
+.cardPosition {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  width: var(--card-width);
+  aspect-ratio: 0.68;
+
+  transform:
+    translate(-50%, -50%)
+    rotate(var(--angle))
+    translateY(calc(var(--orbit-radius) * -1));
+}
+
+/* PORTFOLIO CARD */
+
+.card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+  border-radius: 10px;
+
+  transition: scale 0.3s ease;
+}
+
+.card:hover {
+  scale: 1.06;
+}
+
+/* FIXED HEADING */
+
+.heading {
+  top: 60%;
+  transform: translateY(-50%);
+}
+
+/* PAUSE ON HOVER */
+
+@media (hover: hover) {
+  .orbitContainer:hover .orbit {
+    animation-play-state: paused;
+  }
+}
+
+/* ROTATION ANIMATION */
+
+@keyframes portfolioRotation {
+  from {
+    transform: rotate(-18deg);
+  }
+
+  to {
+    transform: rotate(342deg);
+  }
+}
+
+/* TABLET */
+
+@media (max-width: 1024px) {
+  .section {
+    --orbit-radius: 43vw;
+    --card-width: 14vw;
+
+    height: 65vw;
+    min-height: 440px;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 640px) {
+  .section {
+    --orbit-radius: 270px;
+    --card-width: 105px;
+
+    height: 440px;
+  }
+
+  .orbitContainer {
+    top: 85%;
+  }
+
+  .heading {
+    top: 65%;
+  }
+}
+
+/* ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+  .orbit {
+    animation: none;
+  }
+
+  .card {
+    transition: none;
+  }
+}

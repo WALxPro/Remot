@@ -35,3 +35,15 @@ export const FEATURED_WORK = {
     { id: 5, src: IMAGES.featured.feature5, alt: "Brand identity design" },
   ],
 };
+
+export const PORTFOLIO_SHOWCASE = {
+  heading: ["SEE WHAT WE", "DID FOR OUR CLIENTS!"],
+
+  background: "/images/portfolio/portfolio-vector.webp",
+
+  images: Array.from({ length: 10 }, (_, index) => ({
+    id: index + 1,
+    src: `/images/portfolio/portfolio-${index + 1}.webp`,
+    alt: `Studio Remot portfolio project ${index + 1}`,
+  })),
+};

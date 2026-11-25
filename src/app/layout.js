@@ -2,6 +2,7 @@
 import localFont from "next/font/local";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { ContactPopupProvider } from "@/components/providers/ContactPopupProvider";
 import "./globals.css";
 
 const sansation = localFont({
@@ -37,6 +38,9 @@ export default function RootLayout({ children }) {
       className={`${sansation.variable} ${poppins.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col">
+         <ContactPopupProvider>
+    
+  
         <Navbar />
 
         <main className="flex-1">
@@ -44,6 +48,7 @@ export default function RootLayout({ children }) {
         </main>
 
         <Footer />
+        </ContactPopupProvider>
       </body>
     </html>
   );

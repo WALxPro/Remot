@@ -7,8 +7,8 @@ const VARIANTS = {
   outline:
     "border-2 border-brand-primary bg-transparent text-foreground hover:bg-brand-gradient",
 
-  white: "bg-foreground text-black hover:bg-brand-primary hover:text-foreground",
-
+  white:
+    "bg-foreground text-black hover:bg-brand-primary hover:text-foreground",
 };
 
 export function Button({
@@ -18,24 +18,40 @@ export function Button({
   variant = "primary",
   children,
   className = "",
+  onClick,
+  ...props
 }) {
   const classes = twMerge(
     "inline-flex min-h-[66px] min-w-[220px] items-center justify-center rounded-[10px] px-4 text-base font-medium transition cursor-pointer",
     VARIANTS[variant] || VARIANTS.primary,
-    className,
+    disabled && "cursor-not-allowed opacity-50",
+    className
   );
 
-  if (type === "submit") {
+  // NAVIGATION LINK
+  if (href && type !== "submit" && !disabled) {
     return (
-      <button type="submit" disabled={disabled} className={classes}>
+      <Link
+        {...props}
+        href={href}
+        onClick={onClick}
+        className={classes}
+      >
         {children}
-      </button>
+      </Link>
     );
   }
 
+  // NORMAL BUTTON / POPUP / FORM SUBMIT
   return (
-    <Link href={href} className={classes}>
+    <button
+      {...props}
+      type={type}
+      disabled={disabled}
+      onClick={onClick}
+      className={classes}
+    >
       {children}
-    </Link>
+    </button>
   );
 }
