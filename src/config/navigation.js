@@ -1,6 +1,6 @@
 export const NAVBAR = {
   brand: {
-    src: "/images/logo-remot.png",
+    src: "/images/shared/logo-remot.png",
     alt: "Studio Remot",
     href: "/",
   },
@@ -159,7 +159,7 @@ export const SERVICE_MEGA_MENU = [
 export const FOOTER = {
   brand: {
     logo: {
-      src: "/images/logo-remot.png",
+      src: "/images/shared/logo-remot.png",
       alt: "Studio Remot",
     },
     tagline: "Creativity Has No Borders",

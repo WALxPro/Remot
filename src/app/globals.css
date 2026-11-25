@@ -65,7 +65,7 @@ h6 {
 
 .home-background {
   background-color: var(--background);
-  background-image: url("/images/home-bg.png");
+  background-image: url("/images/home/home-bg.png");
   background-repeat: no-repeat;
   background-position: center top;
   background-size: 100% 100%;
@@ -97,14 +97,14 @@ h6 {
 }
 .portfolio-background {
   background-color: var(--background);
-  background-image: url("/images/portfolio-bg.webp");
+  background-image: url("/images/portfolio/portfolio-bg.webp");
   background-repeat: no-repeat;
   background-position: center top;
   background-size: 100% 100%;
 }
 .about-background {
   background-color: var(--background);
-  background-image: url("/images/about-bg.webp");
+  background-image: url("/images/about/about-bg.webp");
   background-repeat: no-repeat;
   background-position: center top;
   background-size: 100% 100%;
@@ -122,7 +122,7 @@ h6 {
 
 .bg-footer-image {
   background-color: var(--background);
-  background-image: url("/images/footer-bg.webp");
+  background-image: url("/images/shared/footer-bg.webp");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;

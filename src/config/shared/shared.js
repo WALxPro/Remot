@@ -1,12 +1,12 @@
 export const SHARED_IMAGES = {
-  hero: "/images/hero.webp",
-  newsletter: "/images/newsletter.webp",
+  hero: "/images/shared/hero.webp",
+  newsletter: "/images/shared/newsletter.webp",
 
   faq: {
-    background: "/images/faq-bg.webp",
+    background: "/images/shared/faq-bg.webp",
   },
   contact: {
-    image: "/images/contact.webp",
+    image: "/images/shared/contact.webp",
   },
 };
 

@@ -1,19 +1,19 @@
 
 export const IMAGES = {
   journey: {
-    team: "/images/journey-about.webp",
+    team: "/images/about/journey-about.webp",
   },
 
   aboutUs: {
-    bookmark: "/images/bookmark.webp",
-    artist: "/images/artist.webp",
-    chess: "/images/chess.webp",
+    bookmark: "/images/about/bookmark.webp",
+    artist: "/images/about/artist.webp",
+    chess: "/images/about/chess.webp",
   },
 
   missionVision: {
-    first: "/images/approch-1.webp",
-    second: "/images/approch-2.webp",
-    third: "/images/approch-3.webp",
+    first: "/images/about/approch-1.webp",
+    second: "/images/about/approch-2.webp",
+    third: "/images/about/approch-3.webp",
   },
 };
 

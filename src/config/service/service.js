@@ -1,11 +1,8 @@
 
 export const IMAGES = {
-  howWeWork: "/images/how-we-work.webp",
+  howWeWork: "/images/service/how-we-work.webp",
 
-  servicesShowcase: {
-    left: "/images/service-brand-1.webp",
-    right: "/images/service-brand-2.webp",
-  },
+  
 };
 
 export const SERVICE_HERO = {
@@ -29,96 +26,96 @@ export const SERVICES_SHOWCASE = {
       title: "MOBILE APP DEVELOPMENT",
       href: "/services/mobile-app-development",
       images: {
-        left: "/images/mobile-app-left.webp",
-        right: "/images/mobile-app-right.webp",
+        left: "/images/service/mobile-app-left.webp",
+        right: "/images/service/mobile-app-right.webp",
       },
     },
     {
       title: "WEB HOSTING",
       href: "/services/cloud",
       images: {
-        left: "/images/web-hosting-left.webp",
-        right: "/images/web-hosting-right.webp",
+        left: "/images/service/web-hosting-left.webp",
+        right: "/images/service/web-hosting-right.webp",
       },
     },
     {
       title: "BRAND IDENTITY",
       href: "/services/brand-identity-design",
       images: {
-        left: "/images/brand-identity-left.webp",
-        right: "/images/brand-identity-right.webp",
+        left: "/images/service/brand-identity-left.webp",
+        right: "/images/service/brand-identity-right.webp",
       },
     },
     {
       title: "DIGITAL MARKETING",
       href: "/services/digital-marketing",
       images: {
-        left: "/images/digital-marketing-left.webp",
-        right: "/images/digital-marketing-right.webp",
+        left: "/images/service/digital-marketing-left.webp",
+        right: "/images/service/digital-marketing-right.webp",
       },
     },
     {
       title: "UI/UX DESIGN",
       href: "/services/website-design-development",
       images: {
-        left: "/images/ui-ux-left.webp",
-        right: "/images/ui-ux-right.webp",
+        left: "/images/service/ui-ux-left.webp",
+        right: "/images/service/ui-ux-right.webp",
       },
     },
     {
       title: "E-COMMERCE SOLUTIONS",
       href: "/services/e-commerce-development",
       images: {
-        left: "/images/ecommerce-left.webp",
-        right: "/images/ecommerce-right.webp",
+        left: "/images/service/ecommerce-left.webp",
+        right: "/images/service/ecommerce-right.webp",
       },
     },
     {
       title: "SEO OPTIMIZATION",
       href: "/services/search-engine-optimization-seo",
       images: {
-        left: "/images/seo-left.webp",
-        right: "/images/seo-right.webp",
+        left: "/images/service/seo-left.webp",
+        right: "/images/service/seo-right.webp",
       },
     },
     {
       title: "CONTENT CREATION",
       href: "/services/content-marketing-and-strategy",
       images: {
-        left: "/images/content-creation-left.webp",
-        right: "/images/content-creation-right.webp",
+        left: "/images/service/content-creation-left.webp",
+        right: "/images/service/content-creation-right.webp",
       },
     },
     {
       title: "CUSTOM DEVELOPMENT",
       href: "/services/software-development",
       images: {
-        left: "/images/custom-development-left.webp",
-        right: "/images/custom-development-right.webp",
+        left: "/images/service/custom-development-left.webp",
+        right: "/images/service/custom-development-right.webp",
       },
     },
     {
       title: "SOCIAL MEDIA MARKETING",
       href: "/services/social-media-marketing-and-management",
       images: {
-        left: "/images/social-media-left.webp",
-        right: "/images/social-media-right.webp",
+        left: "/images/service/social-media-left.webp",
+        right: "/images/service/social-media-right.webp",
       },
     },
     {
       title: "GRAPHIC DESIGN",
       href: "/services/graphic-design-branding",
       images: {
-        left: "/images/graphic-design-left.webp",
-        right: "/images/graphic-design-right.webp",
+        left: "/images/service/graphic-design-left.webp",
+        right: "/images/service/graphic-design-right.webp",
       },
     },
     {
       title: "DIGITAL CONSULTING",
       href: "/services/digital-marketing-strategy-and-consulting",
       images: {
-        left: "/images/digital-consulting-left.webp",
-        right: "/images/digital-consulting-right.webp",
+        left: "/images/service/digital-consulting-left.webp",
+        right: "/images/service/digital-consulting-right.webp",
       },
     },
   ],

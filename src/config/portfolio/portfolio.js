@@ -1,10 +1,10 @@
 export const IMAGES = {
   featured: {
-    feature1: "/images/feature-1.webp",
-    feature2: "/images/feature-2.webp",
-    feature3: "/images/feature-3.webp",
-    feature4: "/images/feature-4.webp",
-    feature5: "/images/feature-5.webp",
+    feature1: "/images/portfolio/feature-1.webp",
+    feature2: "/images/portfolio/feature-2.webp",
+    feature3: "/images/portfolio/feature-3.webp",
+    feature4: "/images/portfolio/feature-4.webp",
+    feature5: "/images/portfolio/feature-5.webp",
   },
 };
 

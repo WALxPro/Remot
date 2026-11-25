@@ -18,7 +18,6 @@ const BAR_TRANSITION = {
   mass: 0.8,
 };
 
-// SHOWCASE HEADER
 const ShowcaseHeader = ({ heading, description }) => {
   return (
     <div className="flex flex-col justify-between gap-5 md:flex-row md:items-start">
@@ -46,7 +45,6 @@ const ShowcaseHeader = ({ heading, description }) => {
   );
 };
 
-// SERVICE IMAGE
 const ServiceImage = ({ src, alt, side }) => {
   if (!src) return null;
 
@@ -110,7 +108,6 @@ const ServiceItem = ({
     >
       {isActive && (
         <>
-          {/* ACTIVE PINK BAR */}
           <motion.div
             layoutId="active-service-bar"
             className="
@@ -122,7 +119,6 @@ const ServiceItem = ({
             transition={BAR_TRANSITION}
           />
 
-          {/* LEFT AND RIGHT IMAGES */}
           <motion.div
             layoutId="active-service-images"
             className="
@@ -148,7 +144,6 @@ const ServiceItem = ({
         </>
       )}
 
-      {/* SERVICE TITLE */}
       <span
         className={`
           relative
@@ -186,7 +181,7 @@ const ServiceList = ({ services, activeIndex }) => {
   );
 };
 
-// MAIN SHOWCASE COMPONENT
+
 export const ServicesShowcase = () => {
   const {
     heading,
