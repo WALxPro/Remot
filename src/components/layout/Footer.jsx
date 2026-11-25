@@ -8,15 +8,14 @@ export function Footer() {
 
   return (
     <footer className="relative overflow-hidden bg-footer-image pt-24 lg:pt-36">
-      {" "}
       <div className="mx-auto grid max-w-7xl gap-12 px-6 lg:grid-cols-[1fr_auto_auto_auto] lg:gap-16 lg:px-0">
-        <div>
+        <div className="min-w-0">
           <Image
-            src="/images/logo-remot.png"
+            src="/images/shared/logo-remot.png"
             alt="Studio Remot"
             width={419}
             height={135}
-            className="h-auto w-[419px]"
+            className="h-auto w-full max-w-[419px]"
           />
 
           <p className="ml-0 sm:ml-[20px] mt-2 text-[30px] font-light text-foreground">
