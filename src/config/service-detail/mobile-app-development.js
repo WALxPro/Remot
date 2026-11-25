@@ -168,7 +168,7 @@ export const mobileAppDevelopment = {
     background: "/images/service/ready-work.webp",
 
     image: {
-      src: "/images/mobile-service.webp",
+      src: "/images/service/mobile-service.webp",
       alt: "Mobile application interface displayed on a smartphone",
     },
 

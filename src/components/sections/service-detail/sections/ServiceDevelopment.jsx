@@ -14,7 +14,7 @@ export function ServiceDevelopment({
   return (
     <section
       aria-labelledby="service-development-heading"
-      className="w-full bg-transparent px-5 py-14 [content-visibility:auto] [contain-intrinsic-size:auto_1400px] sm:px-8 sm:py-20 lg:px-12 lg:py-24 lg:[contain-intrinsic-size:auto_900px]"
+      className="w-full bg-transparent px-5 py-14 sm:px-8 sm:py-20 lg:px-12 lg:py-24"
     >
       <div className="mx-auto max-w-7xl">
         <div className="mx-auto mb-10 max-w-[1050px] text-center sm:mb-12">

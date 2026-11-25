@@ -14,7 +14,7 @@ export function ServiceCTA({
   return (
     <section
       aria-label={title}
-      className="w-full px-5 py-12 [content-visibility:auto] [contain-intrinsic-size:auto_420px] sm:px-8 lg:px-12 lg:py-20 lg:[contain-intrinsic-size:auto_480px]"
+      className="w-full px-5 py-12 sm:px-8 lg:px-12 lg:py-20"
     >
       <div className="relative isolate mx-auto w-full max-w-7xl overflow-hidden rounded-[24px] bg-background">
         {background && (

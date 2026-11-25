@@ -100,7 +100,7 @@ export function ServiceProcess({
   return (
     <section
       aria-labelledby="service-process-heading"
-      className="w-full px-5 py-16 [content-visibility:auto] [contain-intrinsic-size:auto_1500px] sm:px-8 lg:px-12 lg:py-24 lg:[contain-intrinsic-size:auto_1100px]"
+      className="w-full px-5 py-16 sm:px-8 lg:px-12 lg:py-24"
     >
       <div className="mx-auto max-w-7xl">
         {/* Heading and description */}

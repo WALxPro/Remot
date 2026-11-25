@@ -38,7 +38,7 @@ export function ServiceLaunch({
 
   return (
     <section
-      className="w-full px-5 py-16 [content-visibility:auto] [contain-intrinsic-size:auto_700px] sm:px-8 lg:px-12 lg:py-24 lg:[contain-intrinsic-size:auto_760px]"
+      className="w-full px-5 py-16 sm:px-8 lg:px-12 lg:py-24"
     >
       <div className="relative mx-auto w-full max-w-7xl py-8 lg:py-16">
         <div className="relative isolate rounded-[24px] bg-background">

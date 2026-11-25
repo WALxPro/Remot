@@ -74,7 +74,7 @@ export function ServiceOverview({
   if (!title) return null;
 
   return (
-    <section className="w-full bg-transparent px-5 py-12 [content-visibility:auto] [contain-intrinsic-size:auto_900px] md:px-8 md:py-16 lg:py-24 lg:[contain-intrinsic-size:auto_700px]">
+    <section className="w-full bg-transparent px-5 py-12 md:px-8 md:py-16 lg:py-24">
       <div className="mx-auto grid max-w-7xl grid-cols-1 items-start gap-10 md:grid-cols-2 md:gap-12 lg:gap-0">
         <OverviewHeading title={title} image={images?.primary} />
 
