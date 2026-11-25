@@ -103,6 +103,7 @@ export const HowWeWork = () => {
     >
       <div
         className="
+          hidden
           relative
           h-[340px]
           w-full
@@ -110,6 +111,7 @@ export const HowWeWork = () => {
           md:h-[500px]
           lg:h-[550px]
           xl:h-[620px]
+          lg:block
         "
       >
         {/* Side label */}
@@ -149,6 +151,42 @@ export const HowWeWork = () => {
           "
         >
           <Button href={button.href} variant="primary">
+            {button.label}
+          </Button>
+        </div>
+      </div>
+
+      <div className="relative flex flex-col gap-5 px-4 py-6 lg:hidden sm:px-6 sm:py-8">
+        <div className="flex items-start justify-between gap-3">
+          <h2 className="max-w-[11ch] font-sans text-[clamp(38px,10vw,64px)] font-normal uppercase leading-[0.9] tracking-[-0.06em] text-brand-primary">
+            How We Work!
+          </h2>
+          <span className="shrink-0 pt-1 text-[10px] tracking-widest text-foreground">
+            {sideLabel}
+          </span>
+        </div>
+
+        <ol className="grid gap-3">
+          {steps.map((step, index) => (
+            <li
+              key={step.id}
+              className="service-glass flex w-full min-w-0 items-center gap-3 rounded-xl px-3 py-3"
+            >
+              <span
+                aria-hidden="true"
+                className="shrink-0 font-display text-sm text-brand-primary"
+              >
+                {String(index + 1).padStart(2, "0")}
+              </span>
+              <Paragraph className="min-w-0 break-words">
+                {step.text}
+              </Paragraph>
+            </li>
+          ))}
+        </ol>
+
+        <div>
+          <Button href={button.href} variant="primary" className="w-full max-w-[220px]">
             {button.label}
           </Button>
         </div>
