@@ -118,6 +118,8 @@ h6 {
   background-size: 100% 100%;
 }
 
+
+
 .bg-footer-image {
   background-color: var(--background);
   background-image: url("/images/footer-bg.webp");
@@ -268,16 +270,18 @@ h6 {
 
 @keyframes studio-banner-scroll {
   from {
-    transform: translateX(0);
+    transform: translate3d(0, 0, 0);
   }
 
   to {
-    transform: translateX(-50%);
+    transform: translate3d(-50%, 0, 0);
   }
 }
 
 .studio-banner-scroll {
-  animation: studio-banner-scroll 25s linear infinite;
+  will-change: transform;
+  backface-visibility: hidden;
+  animation: studio-banner-scroll 17s linear infinite;
   animation-play-state: var(--marquee-play-state, running);
 }
 

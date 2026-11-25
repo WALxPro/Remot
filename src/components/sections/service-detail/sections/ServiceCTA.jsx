@@ -1,4 +1,3 @@
-
 import Image from "next/image";
 
 import { Button } from "@/components/ui/Button";
@@ -15,7 +14,7 @@ export function ServiceCTA({
   return (
     <section
       aria-label={title}
-      className="w-full px-5 py-12 sm:px-8 lg:px-12 lg:py-20"
+      className="w-full px-5 py-12 [content-visibility:auto] [contain-intrinsic-size:auto_420px] sm:px-8 lg:px-12 lg:py-20 lg:[contain-intrinsic-size:auto_480px]"
     >
       <div className="relative isolate mx-auto w-full max-w-7xl overflow-hidden rounded-[24px] bg-background">
         {background && (
@@ -23,6 +22,8 @@ export function ServiceCTA({
             src={background}
             alt=""
             fill
+            quality={65}
+            decoding="async"
             sizes="(max-width: 767px) 100vw, 1280px"
             className="-z-10 object-cover"
           />
@@ -41,10 +42,7 @@ export function ServiceCTA({
             )}
 
             {cta?.href && cta?.label && (
-              <Button
-                href={cta.href}
-                variant="outline"
-              >
+              <Button href={cta.href} variant="outline">
                 {cta.label}
               </Button>
             )}

@@ -1,9 +1,7 @@
-
 import Image from "next/image";
 
 import { Button } from "@/components/ui/Button";
 import { Paragraph } from "@/components/ui/Paragraph";
-
 
 function LaunchArtwork({ image }) {
   if (!image?.src) return null;
@@ -15,13 +13,15 @@ function LaunchArtwork({ image }) {
         alt={image.alt ?? ""}
         width={1086}
         height={1947}
+        quality={70}
+        loading="lazy"
+        decoding="async"
         sizes="(max-width: 639px) 75vw, (max-width: 1023px) 400px, 520px"
         className="h-auto w-full object-contain"
       />
     </div>
   );
 }
-
 
 export function ServiceLaunch({
   title,
@@ -37,7 +37,9 @@ export function ServiceLaunch({
     : [description];
 
   return (
-    <section className="w-full px-5 py-16 sm:px-8 lg:px-12 lg:py-24">
+    <section
+      className="w-full px-5 py-16 [content-visibility:auto] [contain-intrinsic-size:auto_700px] sm:px-8 lg:px-12 lg:py-24 lg:[contain-intrinsic-size:auto_760px]"
+    >
       <div className="relative mx-auto w-full max-w-7xl py-8 lg:py-16">
         <div className="relative isolate rounded-[24px] bg-background">
           {background && (
@@ -46,6 +48,9 @@ export function ServiceLaunch({
                 src={background}
                 alt=""
                 fill
+                quality={65}
+                loading="lazy"
+                decoding="async"
                 sizes="(max-width: 1023px) 100vw, 1280px"
                 className="object-cover"
               />
@@ -59,18 +64,13 @@ export function ServiceLaunch({
 
             <div className="mt-5 max-w-[650px] space-y-4">
               {paragraphs.filter(Boolean).map((text, index) => (
-                <Paragraph key={index}>
-                  {text}
-                </Paragraph>
+                <Paragraph key={index}>{text}</Paragraph>
               ))}
             </div>
 
             {cta?.href && cta?.label && (
               <div className="mt-7">
-                <Button
-                  href={cta.href}
-                  variant="outline"
-                >
+                <Button href={cta.href} variant="outline">
                   {cta.label}
                 </Button>
               </div>

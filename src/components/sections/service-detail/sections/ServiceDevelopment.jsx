@@ -1,10 +1,6 @@
-
 import { Button } from "@/components/ui/Button";
 import { Paragraph } from "@/components/ui/Paragraph";
-// import { GlassTextFilter } from "@/components/ui/GlassTextFilter";
 import { ServicesGrid } from "@/components/ui/ServicesGrid";
-
-const FILTER_ID = "service-development-glass";
 
 export function ServiceDevelopment({
   heading,
@@ -18,17 +14,8 @@ export function ServiceDevelopment({
   return (
     <section
       aria-labelledby="service-development-heading"
-      className="w-full bg-transparent px-5 py-14 sm:px-8 sm:py-20 lg:px-12 lg:py-24"
+      className="w-full bg-transparent px-5 py-14 [content-visibility:auto] [contain-intrinsic-size:auto_1400px] sm:px-8 sm:py-20 lg:px-12 lg:py-24 lg:[contain-intrinsic-size:auto_900px]"
     >
-      {/* <GlassTextFilter
-        id={FILTER_ID}
-        blur={1.4}
-        depth={3.5}
-        strength={1.1}
-        opacity={1}
-        bounce={0.35}
-      /> */}
-
       <div className="mx-auto max-w-7xl">
         <div className="mx-auto mb-10 max-w-[1050px] text-center sm:mb-12">
           <h2
@@ -51,16 +38,11 @@ export function ServiceDevelopment({
           )}
         </div>
 
-        <ServicesGrid
-          services={services}
-          filterId={FILTER_ID}
-        />
+        <ServicesGrid services={services} />
 
         {cta?.href && cta?.label && (
           <div className="mt-12 flex justify-center">
-            <Button href={cta.href}>
-              {cta.label}
-            </Button>
+            <Button href={cta.href}>{cta.label}</Button>
           </div>
         )}
       </div>

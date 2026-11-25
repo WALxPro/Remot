@@ -1,4 +1,3 @@
-
 import Image from "next/image";
 
 import { Button } from "@/components/ui/Button";
@@ -13,6 +12,8 @@ function ProcessCard({ step }) {
             src={step.icon}
             alt=""
             fill
+            quality={75}
+            decoding="async"
             sizes="94px"
             className="object-contain"
           />
@@ -81,11 +82,7 @@ function ProcessTimeline({ steps }) {
         }}
       >
         {steps.map((step, index) => (
-          <ProcessStep
-            key={step.id}
-            step={step}
-            index={index}
-          />
+          <ProcessStep key={step.id} step={step} index={index} />
         ))}
       </ol>
     </div>
@@ -103,7 +100,7 @@ export function ServiceProcess({
   return (
     <section
       aria-labelledby="service-process-heading"
-      className="w-full px-5 py-16 sm:px-8 lg:px-12 lg:py-24"
+      className="w-full px-5 py-16 [content-visibility:auto] [contain-intrinsic-size:auto_1500px] sm:px-8 lg:px-12 lg:py-24 lg:[contain-intrinsic-size:auto_1100px]"
     >
       <div className="mx-auto max-w-7xl">
         {/* Heading and description */}
@@ -123,9 +120,7 @@ export function ServiceProcess({
             )}
 
             {cta?.href && cta?.label && (
-              <Button href={cta.href} >
-                {cta.label}
-              </Button>
+              <Button href={cta.href}>{cta.label}</Button>
             )}
           </div>
         </div>
