@@ -11,7 +11,7 @@ import { ServiceLaunch } from "./sections/ServiceLaunch";
 
 export function ServiceDetailPage({ service }) {
   return (
-    <div className="service-inner-background">
+    <div className="">
       {service.hero && <ServiceDetailHero hero={service.hero} />}
       {service.overview && <ServiceOverview {...service.overview} />}
 

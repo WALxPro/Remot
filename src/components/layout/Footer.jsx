@@ -2,7 +2,6 @@ import Image from "next/image";
 import { FooterColumn } from "@/components/ui/FooterColumn";
 import { SocialLinks } from "@/components/ui/SocialLinks";
 import { FOOTER } from "@/config/navigation";
-import { GlassTextFilter } from "../ui/GlassTextFilter";
 
 export function Footer() {
   const { brand, columns, contact, social, watermark, copyright } = FOOTER;
@@ -34,19 +33,16 @@ export function Footer() {
           <SocialLinks title={social.title} links={social.links} />
         </div>
       </div>
-      <GlassTextFilter id="glass-text-xl" blur={5} depth={10} shadow={8} />
-      <div
-        className="relative mx-auto mt-16 h-[6vw] max-w-7xl overflow-hidden"
-        aria-hidden="true"
-      >
-        <span
-          className="pointer-events-none block select-none whitespace-nowrap text-center
-               text-[11vw] font-semibold uppercase leading-none text-foreground/10
-               [filter:url(#glass-text-xl)]"
-        >
-          {watermark}
-        </span>
-      </div>
+
+<div
+  className="relative mx-auto mt-16 h-[6vw] max-w-7xl overflow-hidden"
+  aria-hidden="true"
+>
+  <span className="footer-watermark pointer-events-none block select-none whitespace-nowrap text-center font-display text-[11vw] font-medium uppercase leading-none">
+    {watermark}
+  </span>
+</div>
+
       <p className="absolute bottom-3 right-6 text-base text-foreground/80 lg:right-16">
         &copy; {new Date().getFullYear()} {copyright}
       </p>
