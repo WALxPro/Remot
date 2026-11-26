@@ -28,6 +28,13 @@ const BLOG_FIELD_MAP = {
   metaDescription: "meta_description",
 };
 
+const PUBLIC_BLOG_COLUMNS = `
+  title, slug, description, featured_image AS "featuredImage", category,
+  published_at AS "publishedAt", updated_at AS "updatedAt"
+`;
+
+const PUBLIC_BLOG_DETAIL_COLUMNS = `${PUBLIC_BLOG_COLUMNS}, content, meta_title AS "metaTitle", meta_description AS "metaDescription"`;
+
 // CREATE BLOG
 export async function createBlog(blog) {
   const {
@@ -142,6 +149,26 @@ export async function findBlogBySlug(slug) {
   );
 
   return rows[0] ?? null;
+}
+
+export async function findPublishedBlogs({ limit = 24 } = {}) {
+  const { rows } = await pool.query(`SELECT ${PUBLIC_BLOG_COLUMNS} FROM blogs WHERE status = 'published' ORDER BY published_at DESC NULLS LAST, created_at DESC LIMIT $1`, [limit]);
+  return rows;
+}
+
+export async function findPublishedBlogBySlug(slug) {
+  const { rows } = await pool.query(`SELECT ${PUBLIC_BLOG_DETAIL_COLUMNS} FROM blogs WHERE slug = $1 AND status = 'published'`, [slug]);
+  return rows[0] ?? null;
+}
+
+export async function findRelatedPublishedBlogs(category, slug, limit = 3) {
+  const { rows } = await pool.query(`SELECT ${PUBLIC_BLOG_COLUMNS} FROM blogs WHERE status = 'published' AND slug <> $1 ORDER BY (category = $2) DESC, published_at DESC NULLS LAST, created_at DESC LIMIT $3`, [slug, category, limit]);
+  return rows;
+}
+
+export async function findPublishedBlogSitemapEntries() {
+  const { rows } = await pool.query(`SELECT slug, updated_at AS "updatedAt" FROM blogs WHERE status = 'published'`);
+  return rows;
 }
 
 // UPDATE BLOG BY SLUG

@@ -3,11 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "eslint"
-  },
+  "dev": "next dev",
+  "build": "next build",
+  "start": "next start",
+  "lint": "eslint",
+  "db:migrate": "node --env-file=.env.migration src/server/db/migrate.mjs"
+},
   "dependencies": {
     "@hookform/resolvers": "^7.0.9",
     "@tanstack/react-query": "^5.108.4",

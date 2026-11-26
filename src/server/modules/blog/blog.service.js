@@ -139,6 +139,23 @@ export async function getBlogBySlug(slug) {
   return blogRepository.findBlogBySlug(validatedSlug);
 }
 
+export async function getPublishedBlogs() {
+  return blogRepository.findPublishedBlogs();
+}
+
+export async function getPublishedBlogBySlug(slug) {
+  const validatedSlug = blogSlugSchema.parse(slug);
+  return blogRepository.findPublishedBlogBySlug(validatedSlug);
+}
+
+export async function getRelatedPublishedBlogs(category, slug) {
+  return blogRepository.findRelatedPublishedBlogs(category, slug);
+}
+
+export async function getPublishedBlogSitemapEntries() {
+  return blogRepository.findPublishedBlogSitemapEntries();
+}
+
 // UPDATE BLOG BY SLUG
 export async function updateBlogBySlug(slug, data) {
   const validatedSlug = blogSlugSchema.parse(slug);

@@ -1,8 +1,10 @@
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
+import Link from "next/link";
 
 export function BlogCard({ post }) {
-  const { title, category, description, image } = post;
+  const { title, category, description, featuredImage, slug } = post;
+  const canOptimizeImage = featuredImage?.startsWith("https://res.cloudinary.com/");
 
   return (
     <article
@@ -21,10 +23,10 @@ export function BlogCard({ post }) {
         hover:border-brand-primary/50
       "
     >
-      <div className="relative aspect-video overflow-hidden">
-        <Image
-          src={image.src}
-          alt={image.alt}
+      <div className="relative aspect-video overflow-hidden bg-foreground/5">
+        {canOptimizeImage ? <Image
+          src={featuredImage}
+          alt={title}
           fill
           sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 33vw"
           className="
@@ -34,7 +36,7 @@ export function BlogCard({ post }) {
             group-hover:scale-105
             motion-reduce:transform-none
           "
-        />
+        /> : <div className="flex size-full items-center justify-center text-sm text-foreground/40">Studio Remot</div>}
       </div>
 
       <div className="flex flex-1 flex-col gap-4 p-6">
@@ -42,15 +44,13 @@ export function BlogCard({ post }) {
           {category}
         </span>
 
-        <h3 className="text-xl font-medium leading-snug text-foreground">
-          {title}
-        </h3>
+        <h3 className="text-xl font-medium leading-snug text-foreground"><Link href={`/blog/${slug}`} className="transition-colors hover:text-brand-primary">{title}</Link></h3>
 
         <p className="text-sm leading-relaxed text-foreground/70">
           {description}
         </p>
 
-        <span
+        <Link href={`/blog/${slug}`}
           className="
             mt-auto
             inline-flex
@@ -64,7 +64,7 @@ export function BlogCard({ post }) {
         >
           Read More
           <ArrowUpRight size={18} aria-hidden="true" />
-        </span>
+        </Link>
       </div>
     </article>
   );

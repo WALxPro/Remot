@@ -1,7 +1,6 @@
 import { BlogCard } from "@/components/sections/blog/BlogCard";
-import { BLOG_POSTS } from "@/config/blog/blog";
 
-export function BlogArticles() {
+export function BlogArticles({ posts = [] }) {
   return (
     <section
       aria-labelledby="blog-articles-heading"
@@ -23,7 +22,7 @@ export function BlogArticles() {
           Latest Articles
         </h2>
 
-        <div
+        {posts.length === 0 ? <p className="mt-12 text-center text-foreground/60">No articles have been published yet. Please check back soon.</p> : <div
           className="
             mt-12
             grid
@@ -34,10 +33,10 @@ export function BlogArticles() {
             lg:gap-8
           "
         >
-          {BLOG_POSTS.map((post) => (
-            <BlogCard key={post.id} post={post} />
+          {posts.map((post) => (
+            <BlogCard key={post.slug} post={post} />
           ))}
-        </div>
+        </div>}
       </div>
     </section>
   );
