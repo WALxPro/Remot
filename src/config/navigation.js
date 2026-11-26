@@ -11,6 +11,7 @@ export const NAVBAR = {
     { label: "Services", href: "/services", megaMenu: true },
     { label: "Portfolio", href: "/portfolio" },
     { label: "Pricing", href: "/pricing" },
+    { label: "Blog", href: "/blog" },
   ],
 };
 
@@ -173,6 +174,7 @@ export const FOOTER = {
         { label: "Portfolio", href: "/portfolio" },
         { label: "Contact", href: "/contact" },
         { label: "Pricing", href: "/pricing" },
+        { label: "Blog", href: "/blog" },
       ],
     },
 

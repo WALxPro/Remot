@@ -1,8 +1,4 @@
-
 import localFont from "next/font/local";
-import { Navbar } from "@/components/layout/Navbar";
-import { Footer } from "@/components/layout/Footer";
-import { ContactPopupProvider } from "@/components/providers/ContactPopupProvider";
 import "./globals.css";
 
 const sansation = localFont({
@@ -22,7 +18,6 @@ const poppins = localFont({
     { path: "./fonts/poppins-bold.woff2", weight: "700" },
   ],
   variable: "--font-poppins",
-  subsets: ["latin"],
   display: "swap",
 });
 
@@ -38,17 +33,7 @@ export default function RootLayout({ children }) {
       className={`${sansation.variable} ${poppins.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col">
-         <ContactPopupProvider>
-    
-  
-        <Navbar />
-
-        <main className="flex-1">
-          {children}
-        </main>
-
-        <Footer />
-        </ContactPopupProvider>
+        {children}
       </body>
     </html>
   );

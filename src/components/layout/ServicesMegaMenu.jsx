@@ -1,8 +1,8 @@
-
 "use client";
 
 import { useMemo, useState } from "react";
 import Link from "next/link";
+
 import {
   HiArrowRight,
   HiOutlineSearch,
@@ -17,6 +17,7 @@ export function ServicesMegaMenu({ onClose }) {
   const [activeId, setActiveId] = useState(
     SERVICE_MEGA_MENU[0]?.id ?? null
   );
+
   const [search, setSearch] = useState("");
 
   const query = search.trim().toLowerCase();
@@ -137,19 +138,16 @@ export function ServicesMegaMenu({ onClose }) {
                 activeCategory?.id === category.id;
 
               return (
-                <button
+                <Link
                   key={category.id}
-                  type="button"
+                  href={category.href}
                   onMouseEnter={() =>
                     setActiveId(category.id)
                   }
                   onFocus={() =>
                     setActiveId(category.id)
                   }
-                  onClick={() =>
-                    setActiveId(category.id)
-                  }
-                  aria-pressed={isActive}
+                  onClick={onClose}
                   className={`
                     flex w-full cursor-pointer items-center
                     justify-between gap-3 px-5 py-3
@@ -176,7 +174,7 @@ export function ServicesMegaMenu({ onClose }) {
                   {isActive && (
                     <HiArrowRight className="shrink-0" />
                   )}
-                </button>
+                </Link>
               );
             })}
 
