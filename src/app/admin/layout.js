@@ -1,5 +1,6 @@
 import { AdminHeader } from "@/components/admins/layout/AdminHeader";
 import { AdminSidebar } from "@/components/admins/layout/AdminSidebar";
+import { AdminQueryProvider } from "@/components/providers/AdminQueryProvider";
 
 export const metadata = {
   title: "Admin Panel | Studio Remot",
@@ -12,8 +13,9 @@ export const metadata = {
 
 export default function AdminLayout({ children }) {
   return (
-    <div className="flex min-h-screen flex-1 bg-background text-foreground">
-      <AdminSidebar />
+    <AdminQueryProvider>
+      <div className="flex min-h-screen flex-1 bg-background text-foreground">
+        <AdminSidebar />
 
       <div className="flex min-w-0 flex-1 flex-col">
         <AdminHeader />
@@ -22,6 +24,7 @@ export default function AdminLayout({ children }) {
           {children}
         </main>
       </div>
-    </div>
+      </div>
+    </AdminQueryProvider>
   );
 }

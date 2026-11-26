@@ -7,6 +7,9 @@ import {
   HiOutlinePhotograph,
   HiOutlineTrash,
 } from "react-icons/hi";
+import Image from "next/image";
+import { AdminCard } from "@/components/admins/ui/AdminCard";
+import { Controller, useFormContext, useWatch } from "react-hook-form";
 
 const ALLOWED_TYPES = [
   "image/jpeg",
@@ -15,30 +18,45 @@ const ALLOWED_TYPES = [
 ];
 
 const MAX_FILE_SIZE = 5 * 1024 * 1024;
+const isBrowserFile = (value) => typeof File !== "undefined" && value instanceof File;
 
-export function BlogFeaturedImage({
-  value = null,
-  onChange,
-}) {
+export function BlogFeaturedImage() {
+  const { control, formState: { errors } } = useFormContext();
+  const value = useWatch({ control, name: "featuredImage" });
   const inputRef = useRef(null);
 
-  const [preview, setPreview] = useState(null);
+  const [localPreview, setLocalPreview] = useState(null);
+  const localPreviewRef = useRef(null);
   const [isDragging, setIsDragging] = useState(false);
   const [error, setError] = useState("");
 
   useEffect(() => {
-    if (value instanceof File) {
-      const objectUrl = URL.createObjectURL(value);
-
-      setPreview(objectUrl);
-
-      return () => URL.revokeObjectURL(objectUrl);
+    if (localPreviewRef.current && localPreviewRef.current.file !== value) {
+      URL.revokeObjectURL(localPreviewRef.current.url);
+      localPreviewRef.current = null;
     }
-
-    setPreview(value || null);
   }, [value]);
 
-  function handleFile(file) {
+  useEffect(() => () => {
+    if (localPreviewRef.current) {
+      URL.revokeObjectURL(localPreviewRef.current.url);
+    }
+  }, []);
+
+  const preview = isBrowserFile(value)
+    ? localPreview?.file === value
+      ? localPreview.url
+      : null
+    : value || null;
+
+  function releaseLocalPreview() {
+    if (localPreviewRef.current) {
+      URL.revokeObjectURL(localPreviewRef.current.url);
+      localPreviewRef.current = null;
+    }
+  }
+
+  function handleFile(file, onChange) {
     if (!file) return;
 
     setError("");
@@ -58,17 +76,23 @@ export function BlogFeaturedImage({
       return;
     }
 
+    releaseLocalPreview();
+    const nextPreview = { file, url: URL.createObjectURL(file) };
+    localPreviewRef.current = nextPreview;
+    setLocalPreview(nextPreview);
     onChange(file);
   }
 
-  function handleDrop(event) {
+  function handleDrop(event, onChange) {
     event.preventDefault();
     setIsDragging(false);
 
-    handleFile(event.dataTransfer.files[0]);
+    handleFile(event.dataTransfer.files[0], onChange);
   }
 
-  function handleRemove() {
+  function handleRemove(onChange) {
+    releaseLocalPreview();
+    setLocalPreview(null);
     onChange(null);
     setError("");
 
@@ -78,7 +102,7 @@ export function BlogFeaturedImage({
   }
 
   return (
-    <section className="space-y-4 rounded-xl border border-foreground/10 p-5 sm:p-6">
+    <AdminCard className="space-y-4">
       {/* SECTION HEADER */}
       <div>
         <h2 className="font-display text-xl font-bold text-foreground">
@@ -90,30 +114,22 @@ export function BlogFeaturedImage({
         </p>
       </div>
 
-      {/* HIDDEN FILE INPUT */}
-      <input
-        ref={inputRef}
-        type="file"
-        accept="image/jpeg,image/png,image/webp"
-        className="hidden"
-        onChange={(event) => {
-          handleFile(event.target.files?.[0]);
-          event.target.value = "";
-        }}
-      />
-
-      {/* IMAGE PREVIEW */}
+      <Controller name="featuredImage" control={control} render={({ field }) => <>
+      <input ref={inputRef} type="file" accept="image/jpeg,image/png,image/webp" className="hidden" onChange={(event) => { handleFile(event.target.files?.[0], field.onChange); event.target.value = ""; }} />
       {preview ? (
         <div className="space-y-3">
-          <div className="aspect-video overflow-hidden rounded-lg border border-foreground/10 bg-foreground/5">
-            <img
+          <div className="relative aspect-video overflow-hidden rounded-lg border border-foreground/10 bg-foreground/5">
+            <Image
               src={preview}
               alt="Featured image preview"
+              fill
+              sizes="(max-width: 1280px) 100vw, 340px"
+              unoptimized={isBrowserFile(value)}
               className="size-full object-cover"
             />
           </div>
 
-          {value instanceof File && (
+          {isBrowserFile(value) && (
             <p className="truncate text-xs text-foreground/50">
               {value.name}
             </p>
@@ -131,7 +147,7 @@ export function BlogFeaturedImage({
 
             <button
               type="button"
-              onClick={handleRemove}
+              onClick={() => handleRemove(field.onChange)}
               aria-label="Remove featured image"
               className="cursor-pointer rounded-lg border border-red-500/20 bg-red-500/5 p-2.5 text-red-400 transition-colors hover:bg-red-500/10"
             >
@@ -149,7 +165,7 @@ export function BlogFeaturedImage({
             setIsDragging(true);
           }}
           onDragLeave={() => setIsDragging(false)}
-          onDrop={handleDrop}
+          onDrop={(event) => handleDrop(event, field.onChange)}
           className={`
             flex min-h-[200px] w-full cursor-pointer
             flex-col items-center justify-center gap-3
@@ -176,7 +192,7 @@ export function BlogFeaturedImage({
             JPG, PNG, WEBP • Maximum 5 MB
           </span>
         </button>
-      )}
+      )}</>} />
 
       {/* VALIDATION ERROR */}
       {error && (
@@ -184,10 +200,11 @@ export function BlogFeaturedImage({
           {error}
         </p>
       )}
+      {errors.featuredImage && <p role="alert" className="text-xs text-red-400">{errors.featuredImage.message}</p>}
 
       <p className="text-xs text-foreground/40">
         Recommended image ratio: 16:9.
       </p>
-    </section>
+    </AdminCard>
   );
 }

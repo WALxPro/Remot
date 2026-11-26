@@ -2,25 +2,8 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-
-import {
-  HiOutlineDocumentText,
-  HiOutlinePlusCircle,
-  HiOutlineExternalLink,
-} from "react-icons/hi";
-
-const ADMIN_NAVIGATION = [
-  {
-    label: "All Blogs",
-    href: "/admin/blogs",
-    icon: HiOutlineDocumentText,
-  },
-  {
-    label: "Create Blog",
-    href: "/admin/blogs/create",
-    icon: HiOutlinePlusCircle,
-  },
-];
+import { HiOutlineExternalLink } from "react-icons/hi";
+import { ADMIN_NAVIGATION } from "@/config/admin/navigation";
 
 export function AdminSidebar() {
   const pathname = usePathname();

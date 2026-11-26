@@ -1,10 +1,5 @@
 import { z } from "zod";
-
-const safeText = () =>
-  z.string().refine(
-    (value) => !value.includes("\u0000"),
-    { message: "Null characters are not allowed" }
-  );
+import { blogTextFields } from "@/lib/validation/blog";
 
 export const blogSlugSchema = z
   .string()
@@ -17,11 +12,7 @@ export const blogSlugSchema = z
   );
 
 const blogFields = z.strictObject({
-  title: safeText().trim().min(1, "Title is required").max(255),
-
-  description: safeText().trim().min(1),
-
-  content: safeText().trim().min(1),
+  ...blogTextFields,
 
   featuredImage: z
     .url({
@@ -34,13 +25,6 @@ const blogFields = z.strictObject({
     .nullable()
     .optional(),
 
-  category: safeText().trim().min(1).max(100),
-
-  status: z.enum(["draft", "published"]),
-
-  metaTitle: safeText().trim().max(255).nullable().optional(),
-
-  metaDescription: safeText().trim().nullable().optional(),
 });
 
 export const createBlogSchema = blogFields.extend({

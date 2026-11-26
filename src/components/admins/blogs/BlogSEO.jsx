@@ -1,20 +1,13 @@
-const inputClassName = `
-  w-full rounded-lg border border-foreground/10
-  bg-foreground/5 px-4 py-3 text-sm
-  text-foreground outline-none
-  placeholder:text-foreground/40
-  transition-colors
-  focus:border-brand-primary/50
-`;
+import { AdminCard } from "@/components/admins/ui/AdminCard";
+import { AdminField, AdminInput, AdminTextarea, CharacterCounter } from "@/components/admins/ui/AdminField";
+import { useFormContext, useWatch } from "react-hook-form";
 
-export function BlogSEO({
-  metaTitle = "",
-  metaDescription = "",
-  onChange,
-}) {
+export function BlogSEO() {
+  const { register, control, formState: { errors } } = useFormContext();
+  const metaTitle = useWatch({ control, name: "metaTitle" }) ?? "";
+  const metaDescription = useWatch({ control, name: "metaDescription" }) ?? "";
   return (
-    <section className="space-y-6 rounded-xl border border-foreground/10 p-5 sm:p-6">
-      {/* SECTION HEADER */}
+    <AdminCard className="space-y-6">
       <div>
         <h2 className="font-display text-xl font-bold text-foreground">
           SEO Settings
@@ -25,8 +18,7 @@ export function BlogSEO({
         </p>
       </div>
 
-      {/* META TITLE */}
-      <div className="space-y-2">
+      <AdminField htmlFor="meta-title" error={errors.metaTitle?.message}>
         <div className="flex items-center justify-between">
           <label
             htmlFor="meta-title"
@@ -35,36 +27,24 @@ export function BlogSEO({
             Meta Title
           </label>
 
-          <span
-            className={`text-xs ${
-              metaTitle.length > 60
-                ? "text-amber-400"
-                : "text-foreground/40"
-            }`}
-          >
-            {metaTitle.length}/60
-          </span>
+          <CharacterCounter value={metaTitle} recommendedLength={60} />
         </div>
 
-        <input
+        <AdminInput
           id="meta-title"
           type="text"
-          value={metaTitle}
-          onChange={(event) =>
-            onChange("metaTitle", event.target.value)
-          }
+          {...register("metaTitle")}
           placeholder="Enter SEO title"
           maxLength={255}
-          className={inputClassName}
+          aria-describedby={errors.metaTitle ? "meta-title-error" : undefined}
+          aria-invalid={Boolean(errors.metaTitle)}
         />
 
         <p className="text-xs text-foreground/40">
           Recommended length: 50–60 characters.
         </p>
-      </div>
-
-      {/* META DESCRIPTION */}
-      <div className="space-y-2">
+      </AdminField>
+      <AdminField htmlFor="meta-description" error={errors.metaDescription?.message}>
         <div className="flex items-center justify-between">
           <label
             htmlFor="meta-description"
@@ -73,32 +53,23 @@ export function BlogSEO({
             Meta Description
           </label>
 
-          <span
-            className={`text-xs ${
-              metaDescription.length > 160
-                ? "text-amber-400"
-                : "text-foreground/40"
-            }`}
-          >
-            {metaDescription.length}/160
-          </span>
+          <CharacterCounter value={metaDescription} recommendedLength={160} />
         </div>
 
-        <textarea
+        <AdminTextarea
           id="meta-description"
-          value={metaDescription}
-          onChange={(event) =>
-            onChange("metaDescription", event.target.value)
-          }
+          {...register("metaDescription")}
           placeholder="Enter SEO description"
           rows={4}
-          className={`${inputClassName} resize-y`}
+          className="resize-y"
+          aria-describedby={errors.metaDescription ? "meta-description-error" : undefined}
+          aria-invalid={Boolean(errors.metaDescription)}
         />
 
         <p className="text-xs text-foreground/40">
           Recommended length: 150–160 characters.
         </p>
-      </div>
-    </section>
+      </AdminField>
+    </AdminCard>
   );
 }

@@ -1,6 +1,8 @@
 "use client";
 
 import dynamic from "next/dynamic";
+import { AdminCard } from "@/components/admins/ui/AdminCard";
+import { Controller, useFormContext } from "react-hook-form";
 
 const Editor = dynamic(
   () =>
@@ -70,9 +72,10 @@ const EDITOR_CONFIG = {
   `,
 };
 
-export function BlogEditor({ value = "", onChange }) {
+export function BlogEditor() {
+  const { control, formState: { errors } } = useFormContext();
   return (
-    <section className="space-y-4 rounded-xl border border-foreground/10 p-5 sm:p-6">
+    <AdminCard className="space-y-4">
       <div>
         <h2 className="font-display text-xl font-bold text-foreground">
           Blog Content
@@ -85,15 +88,11 @@ export function BlogEditor({ value = "", onChange }) {
       </div>
 
       <div className="overflow-hidden rounded-lg">
-        <Editor
-          id="blog-content"
-          apiKey={process.env.NEXT_PUBLIC_TINYMCE_API_KEY}
-          cloudChannel="8"
-          value={value}
-          onEditorChange={(content) => onChange(content)}
-          init={EDITOR_CONFIG}
-        />
+        <Controller name="content" control={control} render={({ field }) => (
+          <Editor id="blog-content" apiKey={process.env.NEXT_PUBLIC_TINYMCE_API_KEY} cloudChannel="8" value={field.value} onEditorChange={field.onChange} init={EDITOR_CONFIG} />
+        )} />
       </div>
-    </section>
+      {errors.content && <p role="alert" className="text-xs text-red-400">{errors.content.message}</p>}
+    </AdminCard>
   );
 }

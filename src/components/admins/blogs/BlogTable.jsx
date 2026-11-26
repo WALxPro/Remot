@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 import {
   HiOutlinePhotograph,
@@ -24,7 +25,7 @@ const dateFormatter = new Intl.DateTimeFormat("en-GB", {
   timeZone: "UTC",
 });
 
-export function BlogTable({ blogs = [], onDelete }) {
+export function BlogTable({ blogs = [], onDelete, isDeleting = false }) {
   return (
     <div className="overflow-hidden rounded-xl border border-foreground/10">
       <div className="overflow-x-auto">
@@ -54,12 +55,13 @@ export function BlogTable({ blogs = [], onDelete }) {
                 {/* BLOG TITLE */}
                 <td className="px-5 py-4">
                   <div className="flex items-center gap-4">
-                    <div className="flex size-14 shrink-0 items-center justify-center overflow-hidden rounded-lg border border-foreground/10 bg-foreground/5">
+                    <div className="relative flex size-14 shrink-0 items-center justify-center overflow-hidden rounded-lg border border-foreground/10 bg-foreground/5">
                       {blog.featuredImage ? (
-                        <img
+                        <Image
                           src={blog.featuredImage}
                           alt=""
-                          loading="lazy"
+                          fill
+                          sizes="56px"
                           className="size-full object-cover"
                         />
                       ) : (
@@ -127,6 +129,7 @@ export function BlogTable({ blogs = [], onDelete }) {
                     <button
                       type="button"
                       onClick={() => onDelete(blog)}
+                      disabled={isDeleting}
                       aria-label={`Delete ${blog.title}`}
                       title="Delete blog"
                       className="cursor-pointer rounded-lg p-2 text-foreground/50 transition-colors hover:bg-red-500/10 hover:text-red-400"

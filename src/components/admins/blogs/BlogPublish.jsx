@@ -4,16 +4,15 @@ import {
 } from "react-icons/hi";
 
 import { BlogStatus } from "./BlogStatus";
+import { AdminCard } from "@/components/admins/ui/AdminCard";
+import { AdminField, AdminInput } from "@/components/admins/ui/AdminField";
+import { useFormContext, useWatch } from "react-hook-form";
 
-export function BlogPublish({
-  category = "",
-  status = "draft",
-  onChange,
-  onSave,
-}) {
+export function BlogPublish({ onSave, isSaving = false }) {
+  const { register, control, formState: { errors } } = useFormContext();
+  const status = useWatch({ control, name: "status" }) ?? "draft";
   return (
-    <section className="space-y-6 rounded-xl border border-foreground/10 p-5 sm:p-6">
-      {/* SECTION HEADER */}
+    <AdminCard className="space-y-6">
       <div>
         <h2 className="font-display text-xl font-bold text-foreground">
           Publishing
@@ -24,7 +23,6 @@ export function BlogPublish({
         </p>
       </div>
 
-      {/* CURRENT STATUS */}
       <div className="flex items-center justify-between">
         <span className="text-sm font-medium text-foreground">
           Current Status
@@ -33,41 +31,23 @@ export function BlogPublish({
         <BlogStatus status={status} />
       </div>
 
-      {/* BLOG CATEGORY */}
-      <div className="space-y-2">
-        <label
-          htmlFor="blog-category"
-          className="text-sm font-medium text-foreground"
-        >
-          Category *
-        </label>
-
-        <input
+      <AdminField label="Category *" htmlFor="blog-category" error={errors.category?.message}>
+        <AdminInput
           id="blog-category"
           type="text"
-          value={category}
-          onChange={(event) =>
-            onChange("category", event.target.value)
-          }
+          {...register("category")}
           placeholder="Enter blog category"
           maxLength={100}
           required
-          className="
-            w-full rounded-lg border border-foreground/10
-            bg-foreground/5 px-4 py-3 text-sm
-            text-foreground outline-none
-            placeholder:text-foreground/40
-            transition-colors
-            focus:border-brand-primary/50
-          "
+          aria-describedby={errors.category ? "blog-category-error" : undefined}
+          aria-invalid={Boolean(errors.category)}
         />
-      </div>
-
-      {/* PUBLISHING ACTIONS */}
+      </AdminField>
       <div className="space-y-3 border-t border-foreground/10 pt-5">
         <button
           type="button"
           onClick={() => onSave("draft")}
+          disabled={isSaving}
           className="
             flex w-full cursor-pointer items-center
             justify-center gap-2 rounded-lg
@@ -80,12 +60,13 @@ export function BlogPublish({
         >
           <HiOutlineSave className="text-xl" />
 
-          Save as Draft
+          {isSaving ? "Saving..." : "Save as Draft"}
         </button>
 
         <button
           type="button"
           onClick={() => onSave("published")}
+          disabled={isSaving}
           className="
             flex w-full cursor-pointer items-center
             justify-center gap-2 rounded-lg
@@ -96,11 +77,11 @@ export function BlogPublish({
         >
           <HiOutlineGlobeAlt className="text-xl" />
 
-          {status === "published"
+          {isSaving ? "Saving..." : status === "published"
             ? "Update Blog"
             : "Publish Blog"}
         </button>
       </div>
-    </section>
+    </AdminCard>
   );
 }
