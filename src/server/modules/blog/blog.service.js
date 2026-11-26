@@ -3,6 +3,8 @@ import sanitizeHtml from "sanitize-html";
 
 import * as blogRepository from "./blog.repository";
 
+import { sanitizeBlogContent } from "@/server/utils/sanitizeBlogContent";
+
 import {
   createBlogSchema,
   updateBlogSchema,
@@ -33,23 +35,9 @@ const paginationSchema = z.object({
     .default(""),
 });
 
+// SANITIZE AND VALIDATE CONTENT
 function sanitizeContent(content) {
-  const sanitized = sanitizeHtml(content, {
-    allowedTags: [
-      ...sanitizeHtml.defaults.allowedTags,
-      "img",
-      "h1",
-      "h2",
-      "figure",
-      "figcaption",
-    ],
-    allowedAttributes: {
-      a: ["href", "target", "rel"],
-      img: ["src", "alt", "width", "height"],
-    },
-    allowedSchemes: ["http", "https", "mailto"],
-    allowProtocolRelative: false,
-  });
+  const sanitized = sanitizeBlogContent(content);
 
   const plainText = sanitizeHtml(sanitized, {
     allowedTags: [],
@@ -59,7 +47,9 @@ function sanitizeContent(content) {
     .replace(/[\u200B-\u200D\uFEFF]/g, "")
     .trim();
 
-  const hasImage = /<img\b[^>]*\bsrc="[^"]+"/i.test(sanitized);
+  const hasImage = /<img\b[^>]*\bsrc="[^"]+"/i.test(
+    sanitized
+  );
 
   if (!plainText && !hasImage) {
     throw new z.ZodError([
@@ -74,6 +64,7 @@ function sanitizeContent(content) {
   return sanitized;
 }
 
+// GENERATE SLUG
 function generateSlug(title) {
   const slug = title
     .normalize("NFKD")
@@ -88,6 +79,7 @@ function generateSlug(title) {
   return blogSlugSchema.parse(slug || "blog");
 }
 
+// GENERATE UNIQUE SLUG
 async function generateUniqueSlug(title, currentSlug = null) {
   const baseSlug = generateSlug(title);
 
@@ -139,19 +131,42 @@ export async function getBlogBySlug(slug) {
   return blogRepository.findBlogBySlug(validatedSlug);
 }
 
+// READ PUBLISHED BLOGS
 export async function getPublishedBlogs() {
   return blogRepository.findPublishedBlogs();
 }
 
+// READ PUBLISHED BLOG BY SLUG
 export async function getPublishedBlogBySlug(slug) {
-  const validatedSlug = blogSlugSchema.parse(slug);
-  return blogRepository.findPublishedBlogBySlug(validatedSlug);
+  const result = blogSlugSchema.safeParse(slug);
+
+  if (!result.success) {
+    return null;
+  }
+
+  const blog = await blogRepository.findPublishedBlogBySlug(
+    result.data
+  );
+
+  if (!blog) {
+    return null;
+  }
+
+  return {
+    ...blog,
+    content: sanitizeBlogContent(blog.content),
+  };
 }
 
+// READ RELATED PUBLISHED BLOGS
 export async function getRelatedPublishedBlogs(category, slug) {
-  return blogRepository.findRelatedPublishedBlogs(category, slug);
+  return blogRepository.findRelatedPublishedBlogs(
+    category,
+    slug
+  );
 }
 
+// READ SITEMAP ENTRIES
 export async function getPublishedBlogSitemapEntries() {
   return blogRepository.findPublishedBlogSitemapEntries();
 }
