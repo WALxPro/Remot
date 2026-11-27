@@ -8,11 +8,34 @@ import {
 
 export async function uploadImage(request) {
   try {
-    const formData = await request.formData();
+    const contentType = request.headers.get("content-type");
+
+    if (
+      !contentType
+        ?.toLowerCase()
+        .startsWith("multipart/form-data")
+    ) {
+      return errorResponse(
+        "Content-Type must be multipart/form-data",
+        415
+      );
+    }
+
+    let formData;
+
+    try {
+      formData = await request.formData();
+    } catch (error) {
+      if (error instanceof TypeError) {
+        return errorResponse("Invalid form data", 400);
+      }
+
+      throw error;
+    }
 
     const file = formData.get("file");
 
-    if (!file) {
+    if (!(file instanceof File) || file.size === 0) {
       return errorResponse("Image file is required", 400);
     }
 

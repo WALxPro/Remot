@@ -1,6 +1,5 @@
 import localFont from "next/font/local";
 import "./globals.css";
-
 const sansation = localFont({
   src: [
     { path: "./fonts/sansation-regular.woff2", weight: "400" },

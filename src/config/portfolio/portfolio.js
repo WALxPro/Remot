@@ -41,9 +41,9 @@ export const PORTFOLIO_SHOWCASE = {
 
   background: "/images/portfolio/portfolio-vector.webp",
 
-  images: Array.from({ length: 10 }, (_, index) => ({
+  images: Array.from({ length: 9 }, (_, index) => ({
     id: index + 1,
-    src: `/images/portfolio/portfolio-${index + 1}.webp`,
+    src: `/images/portfolio/portfolio-main-${index + 1}.webp`,
     alt: `Studio Remot portfolio project ${index + 1}`,
   })),
 };

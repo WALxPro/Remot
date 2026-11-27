@@ -43,14 +43,14 @@ export function handleError(error) {
     );
   }
 
-  if (error.code === "BODY_TOO_LARGE") {
+  if (error?.code === "BODY_TOO_LARGE") {
     return errorResponse(
-      "Request body exceeds the maximum size of 1 MB",
+      "Request body exceeds the maximum allowed size",
       413
     );
   }
 
-  if (error.code === "23505") {
+  if (error?.code === "23505") {
     return errorResponse(
       "A record with this unique value already exists",
       409

@@ -1,6 +1,9 @@
-const MAX_BODY_SIZE = 1024 * 1024; // 1 MB
+const DEFAULT_MAX_BODY_SIZE = 1024 * 1024;
 
-export async function parseJsonBody(request) {
+export async function parseJsonBody(
+  request,
+  maxBodySize = DEFAULT_MAX_BODY_SIZE
+) {
   const reader = request.body?.getReader();
 
   if (!reader) {
@@ -8,6 +11,7 @@ export async function parseJsonBody(request) {
   }
 
   const decoder = new TextDecoder();
+
   let totalSize = 0;
   let body = "";
 
@@ -19,7 +23,7 @@ export async function parseJsonBody(request) {
 
       totalSize += value.byteLength;
 
-      if (totalSize > MAX_BODY_SIZE) {
+      if (totalSize > maxBodySize) {
         await reader.cancel();
 
         const error = new Error("Request body is too large");
@@ -28,7 +32,9 @@ export async function parseJsonBody(request) {
         throw error;
       }
 
-      body += decoder.decode(value, { stream: true });
+      body += decoder.decode(value, {
+        stream: true,
+      });
     }
 
     body += decoder.decode();
