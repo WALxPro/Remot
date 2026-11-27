@@ -50,7 +50,15 @@ export async function checkRateLimit(limiter, key) {
       return response;
     }
 
-    console.error("Rate limiter unavailable:", error?.name);
+    console.error("Rate limiter unavailable:", {
+      limiter: limiter.keyPrefix,
+      name: error?.name,
+      code:
+        typeof error?.code === "string" &&
+        /^[A-Z0-9_]{1,40}$/.test(error.code)
+          ? error.code
+          : "UNKNOWN",
+    });
 
     return errorResponse(
       "Service temporarily unavailable.",
