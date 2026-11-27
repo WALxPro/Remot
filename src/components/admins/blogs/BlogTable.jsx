@@ -104,7 +104,7 @@ export function BlogTable({ blogs = [], onDelete, isDeleting = false }) {
                 {/* ACTIONS */}
                 <td className="px-5 py-4">
                   <div className="flex items-center gap-2">
-                    {blog.status === "published" && (
+                    {/* {blog.status === "published" && (
                       <Link
                         href={`/blog/${blog.slug}`}
                         target="_blank"
@@ -115,7 +115,7 @@ export function BlogTable({ blogs = [], onDelete, isDeleting = false }) {
                       >
                         <HiOutlineExternalLink className="text-lg" />
                       </Link>
-                    )}
+                    )} */}
 
                     <Link
                       href={`/admin/blogs/${blog.slug}/edit`}
