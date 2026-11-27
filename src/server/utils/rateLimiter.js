@@ -3,9 +3,17 @@ import { RateLimiterPostgres } from "rate-limiter-flexible";
 import { pool } from "@/server/db/connection";
 import { errorResponse } from "@/server/utils/response";
 
+
+const rateLimitStore = {
+  query({ text, values }) {
+    return pool.query(text, values);
+  },
+};
+
 function createLimiter(keyPrefix, points, duration) {
   return new RateLimiterPostgres({
-    storeClient: pool,
+    storeClient: rateLimitStore,
+    storeType: "pool",
     tableName: "rate_limits",
     tableCreated: true,
     clearExpiredByTimeout: false,
