@@ -1,3 +1,4 @@
+ "server-only";
 import { z } from "zod";
 import sanitizeHtml from "sanitize-html";
 

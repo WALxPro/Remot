@@ -1,20 +1,27 @@
 import * as uploadService from "./upload.service";
 
+import { MAX_IMAGE_SIZE } from "./upload.schema";
+import { parseMultipartBody } from "@/server/utils/request";
+
 import {
   successResponse,
   errorResponse,
   handleError,
 } from "@/server/utils/response";
 
+const MAX_MULTIPART_BODY_SIZE =
+  MAX_IMAGE_SIZE + 64 * 1024;
+
 export async function uploadImage(request) {
   try {
     const contentType = request.headers.get("content-type");
 
-    if (
-      !contentType
-        ?.toLowerCase()
-        .startsWith("multipart/form-data")
-    ) {
+    const mediaType = contentType
+      ?.split(";")[0]
+      .trim()
+      .toLowerCase();
+
+    if (mediaType !== "multipart/form-data") {
       return errorResponse(
         "Content-Type must be multipart/form-data",
         415
@@ -24,7 +31,10 @@ export async function uploadImage(request) {
     let formData;
 
     try {
-      formData = await request.formData();
+      formData = await parseMultipartBody(
+        request,
+        MAX_MULTIPART_BODY_SIZE
+      );
     } catch (error) {
       if (error instanceof TypeError) {
         return errorResponse("Invalid form data", 400);

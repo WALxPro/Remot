@@ -61,7 +61,16 @@ export function handleError(error) {
     return errorResponse("Invalid JSON request", 400);
   }
 
-  console.error("API error:", error);
+  console.error("API error:", {
+    name: error instanceof TypeError
+      ? "TypeError"
+      : "InternalError",
+    code:
+      typeof error?.code === "string" &&
+      /^[A-Z0-9_]{1,40}$/.test(error.code)
+        ? error.code
+        : undefined,
+  });
 
   return errorResponse("Internal server error", 500);
 }

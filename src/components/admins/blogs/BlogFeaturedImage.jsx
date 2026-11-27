@@ -17,7 +17,7 @@ const ALLOWED_TYPES = [
   "image/webp",
 ];
 
-const MAX_FILE_SIZE = 5 * 1024 * 1024;
+const MAX_FILE_SIZE = 4 * 1024 * 1024;
 const isBrowserFile = (value) => typeof File !== "undefined" && value instanceof File;
 
 export function BlogFeaturedImage() {
@@ -72,7 +72,7 @@ export function BlogFeaturedImage() {
     }
 
     if (file.size > MAX_FILE_SIZE) {
-      setError("Image size must not exceed 5 MB.");
+      setError("Image size must not exceed 4 MB.");
       return;
     }
 
